@@ -1,0 +1,11 @@
+id,name,damage,range,short_range,long_range,reload,cost
+1,Bow,2k2,150 yards,-5 to hit,-10 to hit,1 action,8
+2,Crossbow,2k3,100 yards,-5 to hit,-10 to hit,6 actions,12
+3,Rapier,2k2,,,,,15
+4,Epee,2k2,,,,,15
+5,Cutlass,2k2,,,,,15
+6,Smallsword,2k2,,,,,18
+7,Heavy Weapon,3k2,,,,,8
+8,Knife,1k2,5+2*Brawn,-0 to hit,-15 to hit,,6
+9,Musket,5k3,80 yards,-10 to hit,-15 to hit,30 actions,20
+10,Pistol,4k3,30 yards,-10 to hit,-15 to hit,20 actions,20

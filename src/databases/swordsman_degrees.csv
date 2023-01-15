@@ -1,0 +1,5 @@
+id,swordsman_school_id,degree,name,description
+1,2,1,Apprentice (Aldana),The Apprentice is renowned for his lightning-fast reflexes and aggressive fighting style. You may roll one unkept die for Initiative for each Mastery level you have in Aldana.
+2,4,1,Apprentice (Ambrogia),"The Ambrogia style of fighting negates the off-hand penalty when using a dagger or main gauche, and gives the character the Left-Handed Advantage for free (but only while using this style of fighting). Apprentices among Veronica’s Boys are also trained to think quickly and take advantage of every opportunity they get. You may twist you dagger or fencing weapon slightly when you hit, which automatically adds 2 to the damage you inflict (increasing a Damage Roll of 18 to 20 for example)."
+3,1,1,Apprentice (Donovan),"Learning the Donovan style negates the offhand penalty when using a buckler, and grants one free Raise when using the buckler."
+4,3,1,Apprentice (Valroux),"Learning the Valroux style of fighting negates the off-hand penalty when using a dagger or main gauche, and grants a free Raise when parrying with one of those weapons in your off-hand."

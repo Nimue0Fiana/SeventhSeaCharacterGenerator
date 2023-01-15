@@ -1,0 +1,6 @@
+id,name,description,point_cost
+1,able drinker,"However much you drink, liquor never affects any of your rolls.",1
+2,combat reflexes,"After initiative is rolled for any Combat Round, you may re-roll one of your action dice, but you are forced to keep the new roll.",3
+3,appearance - above average,+1 unkept die for all social rolls,5
+4,appearance - stunning,+2 unkept dice for all social rolls,10
+5,dangerous beauty,You always roll 2 extra unkept dice for any seduction attempts.,3

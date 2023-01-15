@@ -1,0 +1,20 @@
+id,skill_id,name,isAdvanced,description
+1,1,dancing,0,"You ease your way around  a dance floor with grace and poise. Ballroom dancers with great skill are in high demand at noble balls, while ballet dancers can earn a decent living performing at stage shows and paid recitals."
+2,1,etiquette,0,"You have learned the niceties of of events sponsored by nobility and can avoid a faux pas. When you are using this Knack in a place whose customs you are unfamiliar with, you are at a penalty of -2 unkept dice."
+3,1,fashion,0,"With enough knowledge, you can throw together a presentable outfit, even if the materials at hand are less than satisfactory."
+4,1,oratory,0,Sweet words of praise flow as easily from your lips as whispered words of poison. Oratory allows you to persuade your listeners more easily of any argument.
+5,1,diplomacy,1,"The art of diplomacy is the art of peace; words have prevented more wars than guns ever caused. Your soothing reassurances can calm all but the most enraged duelist, and keep you clood where it belongs - in your veins."
+6,1,gossip,1,"A rumor flies faster than the swiftest arrow and bites twice as deep. Gossips are always near the rumor mill and get the latest news before anyone else, but with this Knack, you also have the ability to determine which are true and which are important."
+7,1,politics,1,"Politics is power, and the truly clever courtier understands this. You can sense the ebb and flow of a noble's influence and determine whose coattails represent the quickest ride to the top."
+8,1,seduction,1,"The breathy whisper of a suptry woman has thrown more than one empire into chaos. Armed with this Knack, you have the potential to be more dangerous to the stability of a nation than a hundred soldiers."
+9,2,acting,0,"Slipping in and our of character is your forte. You can pretend to be a member of a different social class, exhibiting the humility of a beggar or the arrogance of a king. Of course, this is much more effective when combined with the proper custume."
+10,2,dancing,0,"You ease your way around  a dance floor with grace and poise. Ballroom dancers with great skill are in high demand at noble balls, while ballet dancers can earn a decent living performing at stage shows and paid recitals."
+11,2,oratory,0,Sweet words of praise flow as easily from your lips as whispered words of poison. Oratory allows you to persuade your listeners more easily of any argument.
+12,2,singing,0,A voice as clear as crystal is only part of your secret. Breath control and enunciation count for just as much. This Knack gives you the training to use your voice to the fullest
+13,2,animal training,1,"This Knack allows you to domesticate animals and train them to perform tricks, or to attack on command."
+14,2,storytelling,1,"Seated around a flickering fire, all attention is on you. Your voice and mannerisms are calculated to enthrall your audience completely. Storytellers can, in addition, sometimes collect small sums of money for telling their tales."
+15,3,attack (dirty fighting),0,"Attack is simply the ability to hit your enemy, and should be used in all Skill uses not covered by any other mechanic. Remember, a bare-handed attack's Damage Rating is 0k1."
+16,3,attack (improvised weapon),1,"Attack is simply the ability to hit your enemy. This Knack is used when wielding a weapon that does not conform to any established Knack (like a table, a chest, or another human)."
+17,3,kick,1,"A kick inflicts 0k2 damage, but raises the TN that you are trying to hit by 10. You must descare a Kick before rolling the attack and use this Knack instead of your normal Attack Knack."
+18,4,attack (fencing),0,Attack is simply to hit your enemy.
+19,4,parry (fencing),0,Parrying is the act of putting your sword between yourself and your enemies' strikes. This Knack can be used as your Defense Knack while you are wielding a sword.
