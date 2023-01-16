@@ -1,21 +1,15 @@
 package com.example.seventhseacharactergenerator;
 
-import com.example.seventhseacharactergenerator.models.Nation;
+import com.example.seventhseacharactergenerator.Helper.JDBC;
+import com.example.seventhseacharactergenerator.Models.Nation;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-
 import java.io.IOException;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-
+//TODO: Fix input checking on personalInfoController
 public class CharacterApplication extends Application {
-    public static Nation nation = new Nation(-1, "avalon", "resolve", "Green and enchanted, " +
-            "this union of three kingdoms has recently risen to the forefront of Thean politics.");
 
     @Override
     public void start(Stage stage) throws IOException {

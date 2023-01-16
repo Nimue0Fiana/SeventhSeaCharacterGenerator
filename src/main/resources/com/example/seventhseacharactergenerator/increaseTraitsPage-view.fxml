@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0"
             prefWidth="523.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.seventhseacharactergenerator.controllers.increaseTraitsController">
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
    <children>
       <Circle fill="#ae8600" layoutX="453.0" layoutY="72.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="continueButton" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />

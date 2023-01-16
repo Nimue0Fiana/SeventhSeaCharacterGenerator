@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0"
             prefWidth="1010.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.seventhseacharactergenerator.controllers.knacksController">
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.knacksController">
    <children>
       <Label layoutX="180.0" layoutY="15.0" prefHeight="81.0" prefWidth="680.0" text="Increase your knacks" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
          <font>

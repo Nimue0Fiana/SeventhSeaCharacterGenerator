@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.controllers.confirmSorceryNationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryNationController">
    <children>
       <Label layoutX="97.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
          <font>
@@ -18,7 +18,7 @@
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../Pictures/st,small,845x845-pad,1000x1000,f8f8f8.jpg" />
+            <Image url="@spike.gif" />
          </image>
       </ImageView>
       <Rectangle fx:id="avalon" arcHeight="5.0" arcWidth="5.0" height="96.0" layoutX="89.0" layoutY="254.0" onMouseClicked="#onAvalon" stroke="BLACK" strokeType="INSIDE" width="104.0" />

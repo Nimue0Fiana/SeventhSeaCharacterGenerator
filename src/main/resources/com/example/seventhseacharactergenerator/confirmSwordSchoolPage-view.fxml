@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.seventhseacharactergenerator.controllers.confirmSwordController">
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSwordController">
    <children>
       <Label layoutX="166.0" layoutY="50.0" prefHeight="81.0" prefWidth="404.0" text="Do you want to join a swordsman school?" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
          <font>
