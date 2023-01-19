@@ -45,4 +45,13 @@ public class Nation {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Nation{" +
+                "id=" + id +
+                ", nation_name='" + nation_name + '\'' +
+                ", favored_trait='" + favored_trait + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

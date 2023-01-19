@@ -25,7 +25,7 @@
             <Font name="Bauhaus 93" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="nationDescription" layoutX="194.0" layoutY="105.0" prefHeight="55.0" prefWidth="295.0" text="Label" visible="false" wrapText="true" />
+      <Label fx:id="nationDescription" layoutX="194.0" layoutY="105.0" prefHeight="118.0" prefWidth="295.0" text="Label" visible="false" wrapText="true" />
       <Button fx:id="castille" layoutX="207.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCastille" prefHeight="96.0" prefWidth="104.0" text="Castille">
          <font>
             <Font name="Bauhaus 93" size="14.0" />

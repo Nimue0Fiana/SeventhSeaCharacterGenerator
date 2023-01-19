@@ -45,38 +45,36 @@ public class personalInfoController {
         public Label errorMessage; // // Value injected by FXMLLoader
 
         public void onContinue(ActionEvent actionEvent) {
-                if(playerName.getText().isBlank() || characterName.getText().isBlank()) {
-                        errorMessage.setText("Please fill all fields before continuing.");
-                        errorMessage.setVisible(true);
-                }
-                PCName = characterName.getText();
-                player = playerName.getText();
-                if(genderMale.isSelected()) {
-                        gender = "male";
-                } else if (genderFemale.isSelected()) {
-                        gender = "female";
-                } else {
-                        if(genderOther.getText().isBlank()) {
-                                errorMessage.setText("Please fill all fields before continuing.");
-                                errorMessage.setVisible(true);
-                        } else {
-                                gender = genderOther.getText();
-                        }
-                }
-                tempCharacter.setId(id);
-                tempCharacter.setName(PCName);
-                tempCharacter.setPlayer(player);
-                tempCharacter.setGender(gender);
 
-                try {
-                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/chooseNationPage-view.fxml"));
-                        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                        Scene scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-                        
-                } catch (IOException e) {
-                        e.printStackTrace();
+                if((characterName.getText().isBlank() || playerName.getText().isBlank()) || (!genderMale.isSelected() && !genderFemale.isSelected() && genderOther.getText().isBlank())) {
+                        errorMessage.setVisible(true);
+                        errorMessage.setText("Please fill all fields before continuing.");
+                } else {
+                        PCName = characterName.getText();
+                        player = playerName.getText();
+                        if(genderMale.isSelected()) {
+                                gender = "male";
+                        } else if (genderFemale.isSelected()) {
+                                gender = "female";
+                        } else {
+                              gender = genderOther.getText();
+                        }
+                        tempCharacter.setId(id);
+                        tempCharacter.setName(PCName);
+                        tempCharacter.setPlayer(player);
+                        tempCharacter.setGender(gender);
+                        try {
+                                Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/chooseNationPage-view.fxml"));
+                                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                                Scene scene = new Scene(root);
+                                stage.setScene(scene);
+                                stage.show();
+
+                        } catch (IOException e) {
+                                e.printStackTrace();
+                        }
+
+
                 }
         }
 

@@ -6,6 +6,7 @@ package com.example.seventhseacharactergenerator.Controllers;
 
 import com.example.seventhseacharactergenerator.CharacterApplication;
 import com.example.seventhseacharactergenerator.DBAccess.DBNation;
+import com.example.seventhseacharactergenerator.Models.Nation;
 import com.example.seventhseacharactergenerator.Models.PlayerCharacter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,8 +23,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.example.seventhseacharactergenerator.Controllers.personalInfoController.tempCharacter;
+
 public class chooseNationController implements Initializable {
-        private String name;
+        Nation nation = null;
+        String nextPage = "/com/example/seventhseacharactergenerator/confirmSorceryPage-view.fxml";
         @FXML // fx:id="avalon"
         private Button avalon; // Value injected by FXMLLoader
 
@@ -42,23 +46,64 @@ public class chooseNationController implements Initializable {
         @FXML // fx:id="vodacce"
         private Button vodacce; // Value injected by FXMLLoader
 
+        @Override
+        public void initialize(URL url, ResourceBundle resourceBundle) {
+                System.out.println(tempCharacter.toString());
+        }
+
         @FXML
         void onAvalon(ActionEvent event) {
+                nation = DBNation.getNationByName("avalon");
+                nationDescription.setText(nation.getDescription());
                 nationDescription.setVisible(true);
-                nationDescription.setText(DBNation.getNationDescByName("avalon"));
-
+                System.out.println(nation.toString());
+                System.out.println(nation.getFavored_trait());
         }
 
         @FXML
         void onCastille(ActionEvent event) {
+                nation = DBNation.getNationByName("castille");
+                nationDescription.setText(nation.getDescription());
                 nationDescription.setVisible(true);
-                nationDescription.setText(DBNation.getNationDescByName("castille"));
+                System.out.println(nation.toString());
+        }
+        @FXML
+        void onMontaigne(ActionEvent event) {
+                nation = DBNation.getNationByName("montaigne");
+                nationDescription.setText(nation.getDescription());
+                nationDescription.setVisible(true);
+                System.out.println(nation.toString());
+        }
+
+        @FXML
+        void onVodacce(ActionEvent event) {
+                nation = DBNation.getNationByName("vodacce");
+                nationDescription.setText(nation.getDescription());
+                nationDescription.setVisible(true);
+                System.out.println(nation.toString());
         }
 
         @FXML
         void onClick(ActionEvent event) {
+
+                tempCharacter.setNation(nation);
+                String trait = nation.getFavored_trait();
+                if(trait.equals("resolve")) {
+                        tempCharacter.setResolve(1);
+                } else if(trait.equals("finesse")) {
+                        tempCharacter.setFinesse(1);
+                } else if (trait.equals("wits")) {
+                        tempCharacter.setWits(1);
+                        if(tempCharacter.getGender().equals("male")) {
+                                nextPage = "/com/example/seventhseacharactergenerator/confirmSwordSchoolPage-view.fxml";
+                        }
+                } else if (trait.equals("panache")) {
+                        tempCharacter.setPanache(1);
+                } else if (trait.equals("brawn")) {
+                        tempCharacter.setBrawn(1);
+                }
                 try {
-                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/confirmSorceryPage-view.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource(nextPage));
                         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
@@ -68,20 +113,4 @@ public class chooseNationController implements Initializable {
                 }
         }
 
-        @FXML
-        void onMontaigne(ActionEvent event) {
-                nationDescription.setVisible(true);
-                nationDescription.setText(DBNation.getNationDescByName("montaigne"));
-        }
-
-        @FXML
-        void onVodacce(ActionEvent event) {
-                nationDescription.setVisible(true);
-                nationDescription.setText(DBNation.getNationDescByName("vodacce"));
-        }
-
-        @Override
-        public void initialize(URL url, ResourceBundle resourceBundle) {
-                System.out.println(personalInfoController.tempCharacter.toString());
-        }
 }

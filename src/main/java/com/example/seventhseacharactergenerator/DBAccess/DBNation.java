@@ -48,4 +48,27 @@ public class DBNation {
         }
         return description;
     }
+
+    public static Nation getNationByName(String name) {
+        Nation requestedNation = null;
+        try {
+            String sql = "SELECT N.id, N.name, N.favored_trait, N.description " +
+                    "FROM nations N " +
+                    "WHERE N.name = ?";
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()) {
+                int id = rs.getInt("id");
+                String nationName = rs.getString("name");
+                String favored_trait = rs.getString("favored_trait");
+                String description = rs.getString("description");
+                requestedNation = new Nation(id, nationName, favored_trait, description);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return requestedNation;
+    }
 }

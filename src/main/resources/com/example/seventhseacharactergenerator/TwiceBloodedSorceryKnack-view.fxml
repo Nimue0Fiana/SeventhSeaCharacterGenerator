@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.TwiceBloodedSorceryKnackController">
+   <children>
+      <Label layoutX="78.0" layoutY="21.0" prefHeight="81.0" prefWidth="680.0" text="Pick your sorcery knacks..." textAlignment="CENTER" textFill="#ae8600" wrapText="true">
+         <font>
+            <Font name="Bauhaus 93" size="31.0" />
+         </font>
+      </Label>
+      <TableView fx:id="availableSkillsTable" layoutX="59.0" layoutY="168.0" prefHeight="188.0" prefWidth="304.0">
+        <columns>
+          <TableColumn fx:id="availableSkillNameCol1" prefWidth="141.0" text="Available Skills" />
+            <TableColumn fx:id="availKnacksCol1" prefWidth="162.0" text="Attached Knacks" />
+        </columns>
+      </TableView>
+      <TableView fx:id="chosenSkillsTable" layoutX="480.0" layoutY="168.0" prefHeight="442.0" prefWidth="304.0">
+        <columns>
+          <TableColumn fx:id="chosenSkillCol" prefWidth="145.0" text="Chosen Skills" />
+            <TableColumn fx:id="chosenAttachedKnackCol" prefWidth="158.0" text="Attached Knacks" />
+        </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="375.0" layoutY="377.0" mnemonicParsing="false" onAction="#onAddSelected" text="Add Selected" />
+      <Button fx:id="continueButton" layoutX="848.0" layoutY="646.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
+      <TableView fx:id="availableSkillsTable2" layoutX="59.0" layoutY="422.0" prefHeight="188.0" prefWidth="304.0">
+         <columns>
+            <TableColumn fx:id="availableSkillNameCol2" prefWidth="141.0" text="Available Skills" />
+            <TableColumn fx:id="availKnacksCol2" prefWidth="162.0" text="Attached Knacks" />
+         </columns>
+      </TableView>
+      <Label fx:id="sorcery1Name" layoutX="59.0" layoutY="142.0" text="Label" />
+      <Label fx:id="sorcery2Name" layoutX="59.0" layoutY="394.0" text="Label" />
+      <Label fx:id="sorcery1Points" layoutX="335.0" layoutY="142.0" text="Label" />
+      <Label fx:id="sorcery2Points" layoutX="335.0" layoutY="394.0" text="Label" />
+   </children>
+</AnchorPane>

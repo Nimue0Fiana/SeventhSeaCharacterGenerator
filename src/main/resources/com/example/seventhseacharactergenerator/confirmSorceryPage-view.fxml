@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryController">
    <children>
       <Label layoutX="155.0" layoutY="50.0" prefHeight="55.0" prefWidth="313.0" text="Do you want sorcery?" textFill="#0025e1">
          <font>
             <Font name="Bauhaus 93" size="31.0" />
+         </font>
+      </Label>
+      <Circle fill="#ae8600" layoutX="545.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="heroPointsTotal" layoutX="517.0" layoutY="31.0" text="100" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="33.0" />
          </font>
       </Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">

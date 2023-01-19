@@ -5,13 +5,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryNationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSorceryNationController">
    <children>
-      <Label layoutX="97.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
+      <Label layoutX="146.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
          <font>
             <Font name="Bauhaus 93" size="31.0" />
          </font>
@@ -21,31 +19,27 @@
             <Image url="@spike.gif" />
          </image>
       </ImageView>
-      <Rectangle fx:id="avalon" arcHeight="5.0" arcWidth="5.0" height="96.0" layoutX="89.0" layoutY="254.0" onMouseClicked="#onAvalon" stroke="BLACK" strokeType="INSIDE" width="104.0" />
-      <Rectangle fx:id="castille" arcHeight="5.0" arcWidth="5.0" height="96.0" layoutX="208.0" layoutY="254.0" onMouseClicked="#onCastille" stroke="BLACK" strokeType="INSIDE" width="104.0" />
-      <Rectangle fx:id="vodacce" arcHeight="5.0" arcWidth="5.0" height="96.0" layoutX="324.0" layoutY="254.0" onMouseClicked="#onVodacce" stroke="BLACK" strokeType="INSIDE" width="104.0" />
-      <Rectangle fx:id="montaigne" arcHeight="5.0" arcWidth="5.0" height="96.0" layoutX="443.0" layoutY="254.0" onMouseClicked="#onMontaigne" stroke="BLACK" strokeType="INSIDE" width="104.0" />
-      <Label layoutX="114.0" layoutY="291.0" text="Avalon" textFill="WHITE">
+      <Button fx:id="avalon" layoutX="86.0" layoutY="254.0" mnemonicParsing="false" onAction="#onAvalon" prefHeight="96.0" prefWidth="104.0" text="Avalon">
          <font>
-            <Font name="Bauhaus 93" size="18.0" />
+            <Font name="Bauhaus 93" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="229.0" layoutY="292.0" text="Castille" textFill="WHITE">
+      </Button>
+      <Label fx:id="nation2Description" layoutX="194.0" layoutY="105.0" prefHeight="55.0" prefWidth="295.0" text="Label" visible="false" wrapText="true" />
+      <Button fx:id="castille" layoutX="207.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCastille" prefHeight="96.0" prefWidth="104.0" text="Castille">
          <font>
-            <Font name="Bauhaus 93" size="18.0" />
+            <Font name="Bauhaus 93" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="341.0" layoutY="292.0" text="Vodacce" textFill="WHITE">
+      </Button>
+      <Button fx:id="vodacce" layoutX="322.0" layoutY="254.0" mnemonicParsing="false" onAction="#onVodacce" prefHeight="96.0" prefWidth="104.0" text="Vodacce">
          <font>
-            <Font name="Bauhaus 93" size="18.0" />
+            <Font name="Bauhaus 93" size="14.0" />
          </font>
-      </Label>
-      <Label layoutX="452.0" layoutY="292.0" text="Montaigne" textFill="WHITE">
+      </Button>
+      <Button fx:id="montaigne" layoutX="437.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMontaigne" prefHeight="96.0" prefWidth="104.0" text="Montaigne">
          <font>
-            <Font name="Bauhaus 93" size="18.0" />
+            <Font name="Bauhaus 93" size="14.0" />
          </font>
-      </Label>
+      </Button>
       <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClick" text="Continue" />
-      <Text fx:id="nationDescription" layoutX="193.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nationDescription" visible="false" />
    </children>
 </AnchorPane>
