@@ -5,6 +5,15 @@ public class Nation {
     private String nation_name;
     private String favored_trait;
     private String description;
+    private Sorcery sorcery;
+
+    public Nation(int id, String nation_name, String favored_trait, String description, Sorcery sorcery) {
+        this.id = id;
+        this.nation_name = nation_name;
+        this.favored_trait = favored_trait;
+        this.description = description;
+        this.sorcery = sorcery;
+    }
 
     public Nation(int id, String nation_name, String favored_trait, String description) {
         this.id = id;
@@ -43,6 +52,14 @@ public class Nation {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Sorcery getSorcery() {
+        return sorcery;
+    }
+
+    public void setSorcery(Sorcery sorcery) {
+        this.sorcery = sorcery;
     }
 
     @Override

@@ -82,7 +82,7 @@ public class chooseNationController implements Initializable {
                 nationDescription.setVisible(true);
                 System.out.println(nation.toString());
         }
-
+//TODO:if gender is male and Vodacce, present choice to take half magic for full cost - different page
         @FXML
         void onClick(ActionEvent event) {
 

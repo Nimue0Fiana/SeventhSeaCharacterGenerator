@@ -4,7 +4,11 @@ package com.example.seventhseacharactergenerator.Controllers;
  * Sample Skeleton for 'confirmSorceryPage.fxml' Controller Class
  */
 
+import com.example.seventhseacharactergenerator.DBAccess.DBSorceryKnack;
 import com.example.seventhseacharactergenerator.Models.Sorcerer;
+import com.example.seventhseacharactergenerator.Models.Sorcery;
+import com.example.seventhseacharactergenerator.Models.SorceryKnack;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,7 +30,9 @@ public class confirmSorceryController implements Initializable {
         String nextPage;
         boolean isSorcerer = false;
         public static Sorcerer tempSorcerer = new Sorcerer();
+
         int blood;
+        Sorcery sorcery = new Sorcery();
         @FXML //fx:id = "heroPointsTotal"
         private Label heroPointsTotal; // Value injected by FXMLLoader
 
@@ -101,14 +107,23 @@ public class confirmSorceryController implements Initializable {
         void onContinue(ActionEvent event) {
                 if(isSorcerer) {
                         tempSorcerer = tempSorcerer.transformPCToSorcerer(tempCharacter);
+                        System.out.println(tempCharacter.getName());
                         tempSorcerer.setBlood(blood);
+                        sorcery = tempSorcerer.getNation().getSorcery();
+                        ObservableList<SorceryKnack> sorceryKnacks = DBSorceryKnack.getAllKnacksForSorcery(sorcery.getId());
+                        tempSorcerer.setSorceryKnacks1(sorceryKnacks);
                         if(blood == 2) {
+                                tempSorcerer.setSorcery(sorcery);
+                                System.out.println(sorcery.getName());
+                                System.out.println(tempSorcerer.getSorcery().getName());
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-40);
                                 tempSorcerer.setSorceryPoints1(7);
                         } else if (blood == 1) {
+                                tempSorcerer.setSorcery(sorcery);
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-20);
                                 tempSorcerer.setSorceryPoints1(3);
                         } else if (blood == 3) {
+                                tempSorcerer.addSorceries(sorcery);
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-40);
                                 tempSorcerer.setSorceryPoints1(3);
                                 tempSorcerer.setSorceryPoints2(3);

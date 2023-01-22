@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-//TODO: Fix input checking on personalInfoController
 public class CharacterApplication extends Application {
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.seventhseacharactergenerator.Models;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Sorcerer extends PlayerCharacter {
@@ -7,20 +8,23 @@ public class Sorcerer extends PlayerCharacter {
     private int sorceryPoints1;
     private int sorceryPoints2;
     private int blood;
-    private ObservableList<Sorcery> sorceries;
-    private ObservableList<SorceryKnack> sorceryKnacks;
-    private ObservableList<SorceryDegree> sorceryDegrees;
+
+    private Sorcery sorcery;
+    private ObservableList<Sorcery> sorceries = FXCollections.observableArrayList();
+
+    private ObservableList<SorceryKnack> sorceryKnacks1 = FXCollections.observableArrayList();
+    private ObservableList<SorceryKnack> sorceryKnacks2 = FXCollections.observableArrayList();
+    private ObservableList<SorceryDegree> sorceryDegrees = FXCollections.observableArrayList();
 
     public Sorcerer() {
 
     }
 
-    public Sorcerer(int id, String name, String player, int heroPoints, int sorceryPoints1, int sorceryPoints2, String gender, Nation nation, int brawn, int finesse, int wits, int resolve, int panache, int blood, ObservableList<Sorcery> sorceries, ObservableList<SorceryKnack> sorceryKnacks, ObservableList<SorceryDegree> sorceryDegrees) {
+    public Sorcerer(int id, String name, String player, int heroPoints, int sorceryPoints1, int sorceryPoints2, String gender, Nation nation, int brawn, int finesse, int wits, int resolve, int panache, int blood) {
         super(id, name, player, heroPoints, gender, nation, brawn, finesse, wits, resolve, panache);
+        this.sorceryPoints1 = sorceryPoints1;
+        this.sorceryPoints2 = sorceryPoints2;
         this.blood = blood;
-        this.sorceries = sorceries;
-        this.sorceryKnacks = sorceryKnacks;
-        this.sorceryDegrees = sorceryDegrees;
     }
     public Sorcerer transformPCToSorcerer(PlayerCharacter pc) {
         Sorcerer sorcerer= new Sorcerer();
@@ -60,20 +64,38 @@ public class Sorcerer extends PlayerCharacter {
     }
     public void setBlood(int blood) {
     }
-    public ObservableList<Sorcery> getSorceries() {
+
+    public Sorcery getSorcery() {
+        return sorcery;
+    }
+
+    public void setSorcery(Sorcery sorcery) {
+        this.sorcery = sorcery;
+    }
+
+    public ObservableList<Sorcery> getSorceries(int i) {
         return sorceries;
     }
 
     public void setSorceries(ObservableList<Sorcery> sorceries) {
         this.sorceries = sorceries;
     }
-
-    public ObservableList<SorceryKnack> getSorceryKnacks() {
-        return sorceryKnacks;
+    public void addSorceries(Sorcery sorcery) {
+        sorceries.add(sorcery);
     }
 
-    public void setSorceryKnacks(ObservableList<SorceryKnack> sorceryKnacks) {
-        this.sorceryKnacks = sorceryKnacks;
+    public ObservableList<SorceryKnack> getSorceryKnacks1() {
+        return sorceryKnacks1;
+    }
+    public ObservableList<SorceryKnack> getSorceryKnacks2() {
+        return sorceryKnacks2;
+    }
+
+    public void setSorceryKnacks1(ObservableList<SorceryKnack> sorceryKnacks1) {
+        this.sorceryKnacks1 = sorceryKnacks1;
+    }
+    public void setSorceryKnacks2(ObservableList<SorceryKnack> sorceryKnacks2) {
+        this.sorceryKnacks2 = sorceryKnacks2;
     }
 
     public ObservableList<SorceryDegree> getSorceryDegrees() {
@@ -88,9 +110,13 @@ public class Sorcerer extends PlayerCharacter {
     public String toString() {
         return "Sorcerer{" +
                 "playerCharacter=" + playerCharacter +
+                ", sorceryPoints1=" + sorceryPoints1 +
+                ", sorceryPoints2=" + sorceryPoints2 +
                 ", blood=" + blood +
+                ", sorcery=" + sorcery +
                 ", sorceries=" + sorceries +
-                ", sorceryKnacks=" + sorceryKnacks +
+                ", sorceryKnacks1=" + sorceryKnacks1 +
+                ", sorceryKnacks2=" + sorceryKnacks2 +
                 ", sorceryDegrees=" + sorceryDegrees +
                 '}';
     }

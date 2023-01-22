@@ -2,6 +2,7 @@ package com.example.seventhseacharactergenerator.DBAccess;
 
 import com.example.seventhseacharactergenerator.Helper.JDBC;
 import com.example.seventhseacharactergenerator.Models.Nation;
+import com.example.seventhseacharactergenerator.Models.Sorcery;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -51,8 +52,10 @@ public class DBNation {
 
     public static Nation getNationByName(String name) {
         Nation requestedNation = null;
+        int sorcery_id = 0;
+        Sorcery sorcery = null;
         try {
-            String sql = "SELECT N.id, N.name, N.favored_trait, N.description " +
+            String sql = "SELECT N.id, N.name, N.favored_trait, N.description, N.sorcery_id " +
                     "FROM nations N " +
                     "WHERE N.name = ?";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
@@ -64,10 +67,32 @@ public class DBNation {
                 String nationName = rs.getString("name");
                 String favored_trait = rs.getString("favored_trait");
                 String description = rs.getString("description");
+                sorcery_id = rs.getInt("sorcery_id");
                 requestedNation = new Nation(id, nationName, favored_trait, description);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+        }
+
+        try {
+            String sql = "SELECT S.id, S.name, S.description " +
+                    "FROM sorceries S " +
+                    "WHERE S.id = " + sorcery_id;
+
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()) {
+                int id = rs.getInt("id");
+                String sorceryName = rs.getString("name");
+                String description = rs.getString("description");
+                sorcery = new Sorcery(id, sorceryName, description);
+
+                requestedNation.setSorcery(sorcery);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return requestedNation;
     }

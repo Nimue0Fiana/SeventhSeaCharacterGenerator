@@ -9,6 +9,7 @@ import com.example.seventhseacharactergenerator.Models.Nation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,8 +21,12 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class chooseSorceryNationController {
+import static com.example.seventhseacharactergenerator.Controllers.confirmSorceryController.tempSorcerer;
+
+public class chooseSorceryNationController implements Initializable {
         Nation nation = null;
         @FXML // fx:id="avalon"
         private Button avalon; // Value injected by FXMLLoader
@@ -85,4 +90,8 @@ public class chooseSorceryNationController {
                 }
         }
 
+        @Override
+        public void initialize(URL url, ResourceBundle resourceBundle) {
+                System.out.println(tempSorcerer.toString());
+        }
 }
