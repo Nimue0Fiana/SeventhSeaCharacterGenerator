@@ -61,7 +61,6 @@ public class confirmSorceryController implements Initializable {
                         tempCharacter.setHeroPoints(100);
                 }
                 heroPointsTotal.setText(String.valueOf(tempCharacter.getHeroPoints()));
-                System.out.println(tempCharacter.toString());
         }
 
         @FXML
@@ -106,16 +105,14 @@ public class confirmSorceryController implements Initializable {
         @FXML
         void onContinue(ActionEvent event) {
                 if(isSorcerer) {
+                        tempCharacter.setSorcerer(true);
                         tempSorcerer = tempSorcerer.transformPCToSorcerer(tempCharacter);
-                        System.out.println(tempCharacter.getName());
                         tempSorcerer.setBlood(blood);
                         sorcery = tempSorcerer.getNation().getSorcery();
                         ObservableList<SorceryKnack> sorceryKnacks = DBSorceryKnack.getAllKnacksForSorcery(sorcery.getId());
                         tempSorcerer.setSorceryKnacks1(sorceryKnacks);
                         if(blood == 2) {
                                 tempSorcerer.setSorcery(sorcery);
-                                System.out.println(sorcery.getName());
-                                System.out.println(tempSorcerer.getSorcery().getName());
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-40);
                                 tempSorcerer.setSorceryPoints1(7);
                         } else if (blood == 1) {
@@ -128,9 +125,8 @@ public class confirmSorceryController implements Initializable {
                                 tempSorcerer.setSorceryPoints1(3);
                                 tempSorcerer.setSorceryPoints2(3);
                         }
-                        System.out.println(tempSorcerer.toString());
                 } else {
-                        System.out.println(tempCharacter.toString());
+                        tempCharacter.setSorcerer(false);
                 }
                 if (nextPage == null) {
                         sorceryChoiceDescription.setVisible(true);

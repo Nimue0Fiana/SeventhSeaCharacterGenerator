@@ -96,4 +96,27 @@ public class DBNation {
         }
         return requestedNation;
     }
+
+    public static Nation getNationById(int id) {
+        Nation requestedNation = null;
+        try {
+            String sql = "SELECT N.id, N.name, N.favored_trait, N.description " +
+                    "FROM nations N " +
+                    "WHERE N.id = ?";
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setInt(1 , id);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()) {
+                int nationId = rs.getInt("id");
+                String nationName = rs.getString("name");
+                String favored_trait = rs.getString("favored_trait");
+                String description = rs.getString("description");
+                requestedNation = new Nation(id, nationName, favored_trait, description);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return requestedNation;
+    }
 }

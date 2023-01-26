@@ -4,6 +4,8 @@ import javafx.collections.ObservableList;
 
 public class PlayerCharacter {
     private int id;
+    private boolean isSorcerer;
+    private boolean isSwordsman;
     private String name;
     private String player;
     private int heroPoints;
@@ -153,6 +155,22 @@ public class PlayerCharacter {
 
     public void setAdvantages(ObservableList<Advantages> advantages) {
         this.advantages = advantages;
+    }
+
+    public boolean isSorcerer() {
+        return isSorcerer;
+    }
+
+    public void setSorcerer(boolean sorcerer) {
+        isSorcerer = sorcerer;
+    }
+
+    public boolean isSwordsman() {
+        return isSwordsman;
+    }
+
+    public void setSwordsman(boolean swordsman) {
+        isSwordsman = swordsman;
     }
 
     @Override

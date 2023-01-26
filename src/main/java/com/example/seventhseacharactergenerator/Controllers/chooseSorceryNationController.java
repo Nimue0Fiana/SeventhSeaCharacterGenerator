@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 import static com.example.seventhseacharactergenerator.Controllers.confirmSorceryController.tempSorcerer;
 
 public class chooseSorceryNationController implements Initializable {
-        Nation nation = null;
+    Nation nation = null;
         @FXML // fx:id="avalon"
         private Button avalon; // Value injected by FXMLLoader
 

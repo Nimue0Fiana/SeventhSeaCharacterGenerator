@@ -4,9 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Sorcerer extends PlayerCharacter {
-    PlayerCharacter playerCharacter;
     private int sorceryPoints1;
     private int sorceryPoints2;
+    //half-blood = 1, full-blood = 2, double-blood = 3
     private int blood;
 
     private Sorcery sorcery;
@@ -109,8 +109,7 @@ public class Sorcerer extends PlayerCharacter {
     @Override
     public String toString() {
         return "Sorcerer{" +
-                "playerCharacter=" + playerCharacter +
-                ", sorceryPoints1=" + sorceryPoints1 +
+                "sorceryPoints1=" + sorceryPoints1 +
                 ", sorceryPoints2=" + sorceryPoints2 +
                 ", blood=" + blood +
                 ", sorcery=" + sorcery +
