@@ -4,9 +4,11 @@ package com.example.seventhseacharactergenerator.Controllers;
  * Sample Skeleton for 'confirmSorceryPage.fxml' Controller Class
  */
 
+import com.example.seventhseacharactergenerator.DBAccess.DBSorceryDegree;
 import com.example.seventhseacharactergenerator.DBAccess.DBSorceryKnack;
 import com.example.seventhseacharactergenerator.Models.Sorcerer;
 import com.example.seventhseacharactergenerator.Models.Sorcery;
+import com.example.seventhseacharactergenerator.Models.SorceryDegree;
 import com.example.seventhseacharactergenerator.Models.SorceryKnack;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,12 +27,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static com.example.seventhseacharactergenerator.Controllers.personalInfoController.tempCharacter;
-
+//TODO: Add sorcery degrees here
 public class confirmSorceryController implements Initializable {
         String nextPage;
         boolean isSorcerer = false;
         public static Sorcerer tempSorcerer = new Sorcerer();
-
+        ObservableList<SorceryDegree> sorceryDegrees;
         int blood;
         Sorcery sorcery = new Sorcery();
         @FXML //fx:id = "heroPointsTotal"
@@ -95,6 +97,7 @@ public class confirmSorceryController implements Initializable {
         }
         @FXML
         public void onNoSorcery(ActionEvent actionEvent) {
+                isSorcerer = false;
                 nextPage = "/com/example/seventhseacharactergenerator/confirmSwordSchoolPage-view.fxml";
                 sorceryChoiceDescription.setVisible(true);
                 sorceryChoiceDescription.setText("Your character does not have any magical skill");
@@ -109,6 +112,8 @@ public class confirmSorceryController implements Initializable {
                         tempSorcerer = tempSorcerer.transformPCToSorcerer(tempCharacter);
                         tempSorcerer.setBlood(blood);
                         sorcery = tempSorcerer.getNation().getSorcery();
+                        SorceryDegree newSorceryDegree = DBSorceryDegree.getSorceryDegreeBySorcery(sorcery.getId());
+                        tempSorcerer.addSorceryDegree(newSorceryDegree);
                         ObservableList<SorceryKnack> sorceryKnacks = DBSorceryKnack.getAllKnacksForSorcery(sorcery.getId());
                         tempSorcerer.setSorceryKnacks1(sorceryKnacks);
                         if(blood == 2) {
@@ -120,7 +125,7 @@ public class confirmSorceryController implements Initializable {
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-20);
                                 tempSorcerer.setSorceryPoints1(3);
                         } else if (blood == 3) {
-                                tempSorcerer.addSorceries(sorcery);
+                                tempSorcerer.addSorcery(sorcery);
                                 tempSorcerer.setHeroPoints(tempSorcerer.getHeroPoints()-40);
                                 tempSorcerer.setSorceryPoints1(3);
                                 tempSorcerer.setSorceryPoints2(3);

@@ -47,6 +47,12 @@ public class Swordsman extends  PlayerCharacter{
     public void setSwordsmanSchools(ObservableList<SwordsmanSchool> swordsmanSchools) {
         this.swordsmanSchools = swordsmanSchools;
     }
+    public void addSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
+        swordsmanSchools.add(swordsmanSchool);
+    }
+    public boolean removeSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
+        return this.swordsmanSchools.remove(swordsmanSchool);
+    }
 
     public ObservableList<SwordsmanDegree> getSwordsmanDegrees() {
         return swordsmanDegrees;
@@ -56,11 +62,33 @@ public class Swordsman extends  PlayerCharacter{
         this.swordsmanDegrees = swordsmanDegrees;
     }
 
+    public void addSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
+        swordsmanDegrees.add(swordsmanDegree);
+    }
+    public boolean removeSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
+        return this.swordsmanDegrees.remove(swordsmanDegree);
+    }
+
+    public void setSwordsmanKnacks(ObservableList<SwordsmanKnack> swordsmanKnacks) {
+        this.swordsmanKnacks = swordsmanKnacks;
+    }
+    public boolean removeSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
+        return this.swordsmanKnacks.remove(swordsmanKnack);
+    }
+    public void addSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
+        swordsmanKnacks.add(swordsmanKnack);
+    }
+
+    public ObservableList<SwordsmanKnack> getSwordsmanKnacks() {
+        return swordsmanKnacks;
+    }
+
     @Override
     public String toString() {
         return "Swordsman{" +
                 "swordsmanSchools=" + swordsmanSchools +
                 ", swordsmanDegrees=" + swordsmanDegrees +
+                ", swordsmanKnacks=" + swordsmanKnacks +
                 '}';
     }
 }

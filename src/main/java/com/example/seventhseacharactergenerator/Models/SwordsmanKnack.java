@@ -3,6 +3,8 @@ package com.example.seventhseacharactergenerator.Models;
 public class SwordsmanKnack {
 
     private int id;
+    private int skill_id;
+    private int school_id;
     private String name;
     private int knackLevel;
     private String description;
@@ -10,8 +12,10 @@ public class SwordsmanKnack {
     public SwordsmanKnack() {
     }
 
-    public SwordsmanKnack(int id, String name, int knackLevel, String description) {
+    public SwordsmanKnack(int id, int skill_id, int school_id, String name, int knackLevel, String description) {
         this.id = id;
+        this.skill_id = skill_id;
+        this.school_id = school_id;
         this.name = name;
         this.knackLevel = knackLevel;
         this.description = description;
@@ -23,6 +27,22 @@ public class SwordsmanKnack {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSkill_id() {
+        return skill_id;
+    }
+
+    public void setSkill_id(int skill_id) {
+        this.skill_id = skill_id;
+    }
+
+    public int getSchool_id() {
+        return school_id;
+    }
+
+    public void setSchool_id(int school_id) {
+        this.school_id = school_id;
     }
 
     public String getName() {

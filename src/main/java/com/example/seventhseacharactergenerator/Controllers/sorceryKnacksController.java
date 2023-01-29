@@ -4,6 +4,7 @@ package com.example.seventhseacharactergenerator.Controllers;
  * Sample Skeleton for 'sorceryKnacksPage-view.fxml' Controller Class
  */
 
+import com.example.seventhseacharactergenerator.DBAccess.DBSorceryDegree;
 import com.example.seventhseacharactergenerator.DBAccess.DBSorceryKnack;
 import com.example.seventhseacharactergenerator.Models.Sorcery;
 import com.example.seventhseacharactergenerator.Models.SorceryKnack;
@@ -73,8 +74,6 @@ public class sorceryKnacksController implements Initializable {
                                 knackDescription.setText(knackTable.getSelectionModel().getSelectedItem().getDescription());
                         }
                 });
-
-
         }
 
         @FXML
@@ -83,6 +82,8 @@ public class sorceryKnacksController implements Initializable {
                         Alert alert = new Alert(Alert.AlertType.WARNING, "You've spent too many points.\n Decrease some Knacks and try again");
                         alert.showAndWait();
                 } else {
+                        tempSorcerer.setSorceryKnacks1(sorceryKnacks);
+                        tempSorcerer.addSorceryDegree(DBSorceryDegree.getSorceryDegreeBySorcery(tempSorcerer.getSorcery().getId()));
                         try {
                                 Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/confirmSwordSchoolPage-view.fxml"));
                                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -95,7 +96,6 @@ public class sorceryKnacksController implements Initializable {
                 }
 
         }
-
         @FXML
         void onUpdateButton(ActionEvent event) {
                 knackTable.getSelectionModel().getSelectedItem().setKnackLevel(rankValue.getValue());

@@ -80,8 +80,11 @@ public class Sorcerer extends PlayerCharacter {
     public void setSorceries(ObservableList<Sorcery> sorceries) {
         this.sorceries = sorceries;
     }
-    public void addSorceries(Sorcery sorcery) {
+    public void addSorcery(Sorcery sorcery) {
         sorceries.add(sorcery);
+    }
+    public boolean removeSorcery(Sorcery sorcery) {
+        return this.sorceries.remove(sorcery);
     }
 
     public ObservableList<SorceryKnack> getSorceryKnacks1() {
@@ -104,6 +107,12 @@ public class Sorcerer extends PlayerCharacter {
 
     public void setSorceryDegrees(ObservableList<SorceryDegree> sorceryDegrees) {
         this.sorceryDegrees = sorceryDegrees;
+    }
+    public void addSorceryDegree(SorceryDegree degree) {
+        sorceryDegrees.add(degree);
+    }
+    public boolean removeSorceryDegree(SorceryDegree degree) {
+        return this.sorceryDegrees.remove(degree);
     }
 
     @Override

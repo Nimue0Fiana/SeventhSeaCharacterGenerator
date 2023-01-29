@@ -15,6 +15,7 @@ public class SwordAndSorcerer extends PlayerCharacter {
 
     private ObservableList<SwordsmanSchool> swordsmanSchools = FXCollections.observableArrayList();
     private ObservableList<SwordsmanDegree> swordsmanDegrees = FXCollections.observableArrayList();
+    private ObservableList<SwordsmanKnack> swordsmanKnacks = FXCollections.observableArrayList();
 
     public SwordAndSorcerer() {
 
@@ -174,12 +175,40 @@ public class SwordAndSorcerer extends PlayerCharacter {
         this.swordsmanSchools = swordsmanSchools;
     }
 
+    public void addSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
+        swordsmanSchools.add(swordsmanSchool);
+    }
+    public boolean removeSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
+        return this.swordsmanSchools.remove(swordsmanSchool);
+    }
+
     public ObservableList<SwordsmanDegree> getSwordsmanDegrees() {
         return swordsmanDegrees;
     }
 
     public void setSwordsmanDegrees(ObservableList<SwordsmanDegree> swordsmanDegrees) {
         this.swordsmanDegrees = swordsmanDegrees;
+    }
+
+    public void addSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
+        swordsmanDegrees.add(swordsmanDegree);
+    }
+    public boolean removeSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
+        return this.swordsmanDegrees.remove(swordsmanDegree);
+    }
+
+    public void setSwordsmanKnacks(ObservableList<SwordsmanKnack> swordsmanKnacks) {
+        this.swordsmanKnacks = swordsmanKnacks;
+    }
+    public boolean removeSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
+        return this.swordsmanKnacks.remove(swordsmanKnack);
+    }
+    public void addSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
+        swordsmanKnacks.add(swordsmanKnack);
+    }
+
+    public ObservableList<SwordsmanKnack> getSwordsmanKnacks() {
+        return swordsmanKnacks;
     }
 
     @Override
