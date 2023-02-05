@@ -2,19 +2,27 @@ package com.example.seventhseacharactergenerator.Models;
 
 public class Knack {
     private int id;
+    private int skill_id;
     private String name;
     private int knackLevel;
     private boolean isAdvanced;
     private String description;
-    private int heroPoints;
 
-    public Knack(int id, String name, int knackLevel, boolean isAdvanced, String description, int heroPoints) {
+    public Knack(int id, int skill_id, String name, boolean isAdvanced, String description) {
         this.id = id;
+        this.skill_id = skill_id;
+        this.name = name;
+        this.isAdvanced = isAdvanced;
+        this.description = description;
+    }
+
+    public Knack(int id, int skill_id, String name, int knackLevel, boolean isAdvanced, String description) {
+        this.id = id;
+        this.skill_id = skill_id;
         this.name = name;
         this.knackLevel = knackLevel;
         this.isAdvanced = isAdvanced;
         this.description = description;
-        this.heroPoints = heroPoints;
     }
 
     public int getId() {
@@ -23,6 +31,14 @@ public class Knack {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSkill_id() {
+        return skill_id;
+    }
+
+    public void setSkill_id(int skill_id) {
+        this.skill_id = skill_id;
     }
 
     public String getName() {
@@ -57,11 +73,11 @@ public class Knack {
         this.description = description;
     }
 
-    public int getHeroPoints() {
-        return heroPoints;
-    }
-
-    public void setHeroPoints(int heroPoints) {
-        this.heroPoints = heroPoints;
+    @Override
+    public String toString() {
+        return "Knack{" +
+                ", name='" + name + '\'' +
+                ", knackLevel=" + knackLevel +
+                '}';
     }
 }

@@ -57,7 +57,7 @@ public class sorceryKnacksController implements Initializable {
         @FXML // fx:id="updateButton"
         private Button updateButton; // Value injected by FXMLLoader
 
-        //TODO:set value of rankValue spinner to the rank of the selected object in the tableView. Outside the scope of this project.
+
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
                 sorceryPointsTotal.setText((String.valueOf(tempSorcerer.getSorceryPoints1())));

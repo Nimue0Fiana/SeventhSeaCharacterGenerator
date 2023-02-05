@@ -9,13 +9,11 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0"
-            prefWidth="523.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
    <children>
       <Circle fill="#ae8600" layoutX="453.0" layoutY="72.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="continueButton" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="heroPointsRemaining" layoutX="425.0" layoutY="48.0" text="100" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="heroPointsRemaining" alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="48.0" prefHeight="49.0" prefWidth="74.0" text="50" textFill="WHITE">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
@@ -35,7 +33,7 @@
                <children>
                   <HBox prefHeight="17.0" prefWidth="100.0">
                      <children>
-                        <Circle radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="brawnRank1" onMouseClicked="#onBrawnRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fx:id="brawnRank2" fill="WHITE" onMouseClicked="#onBrawnRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="3.0" />
@@ -60,7 +58,7 @@
                   </HBox>
                   <HBox prefHeight="17.0" prefWidth="100.0">
                      <children>
-                        <Circle radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="finesseRank1" onMouseClicked="#onFinesseRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fx:id="finesseRank2" fill="WHITE" onMouseClicked="#onFinesseRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="3.0" />
@@ -85,7 +83,7 @@
                   </HBox>
                   <HBox prefHeight="17.0" prefWidth="79.0">
                      <children>
-                        <Circle radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="witsRank1" onMouseClicked="#onWitsRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fx:id="witsRank2" fill="WHITE" onMouseClicked="#onWitsRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="3.0" />
@@ -110,7 +108,7 @@
                   </HBox>
                   <HBox prefHeight="17.0" prefWidth="79.0">
                      <children>
-                        <Circle radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="resolveRank1" onMouseClicked="#onResolveRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fx:id="resolveRank2" fill="WHITE" onMouseClicked="#onResolveRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="3.0" />
@@ -135,7 +133,7 @@
                   </HBox>
                   <HBox prefHeight="17.0" prefWidth="79.0">
                      <children>
-                        <Circle radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="panacheRank1" onMouseClicked="#onPanacheRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                         <Circle fx:id="panacheRank2" fill="WHITE" onMouseClicked="#onPanacheRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
                            <HBox.margin>
                               <Insets left="3.0" />

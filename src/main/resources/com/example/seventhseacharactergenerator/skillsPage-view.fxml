@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.skillsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.skillsController">
    <children>
       <Label layoutX="78.0" layoutY="21.0" prefHeight="81.0" prefWidth="680.0" text="Pick your skills..." textAlignment="CENTER" textFill="#ae8600" wrapText="true">
          <font>
@@ -18,14 +14,12 @@
       </Label>
       <TableView fx:id="availableSkillsTable" layoutX="60.0" layoutY="130.0" prefHeight="442.0" prefWidth="304.0">
         <columns>
-          <TableColumn fx:id="availableSkillNameCol" prefWidth="141.0" text="Available Skills" />
-            <TableColumn fx:id="availKnacksCol" prefWidth="162.0" text="Attached Knacks" />
+          <TableColumn fx:id="availableSkillNameCol" prefWidth="303.0" text="Available Skills" />
         </columns>
       </TableView>
       <TableView fx:id="chosenSkillsTable" layoutX="484.0" layoutY="130.0" prefHeight="442.0" prefWidth="304.0">
         <columns>
-          <TableColumn fx:id="chosenSkillCol" prefWidth="145.0" text="Chosen Skills" />
-            <TableColumn fx:id="chosenAttachedKnackCol" prefWidth="158.0" text="Attached Knacks" />
+          <TableColumn fx:id="chosenSkillCol" prefWidth="303.0" text="Chosen Skills" />
         </columns>
       </TableView>
       <TextField fx:id="availableSearch" layoutX="181.0" layoutY="100.0" onAction="#onAvailableSearchEnter" />
@@ -33,13 +27,14 @@
       <TextField fx:id="chosenSearch" layoutX="607.0" layoutY="100.0" onAction="#onChosenSearchEnter" />
       <Button fx:id="chosenGoButton" layoutX="756.0" layoutY="100.0" mnemonicParsing="false" onAction="#onAvailableGoButton" text="Go" />
       <Circle fill="#ae8600" layoutX="859.0" layoutY="62.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="addButton" layoutX="381.0" layoutY="295.0" mnemonicParsing="false" text="Add Selected" />
+      <Button fx:id="addButton" layoutX="398.0" layoutY="295.0" mnemonicParsing="false" onAction="#onAddButton" text="&gt;&gt;&gt;" />
       <Button fx:id="continueButton" layoutX="848.0" layoutY="646.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="heroPointsTotal" layoutX="831.0" layoutY="38.0" text="100" textFill="WHITE">
+      <Label fx:id="heroPointsTotal" alignment="CENTER" contentDisplay="CENTER" layoutX="831.0" layoutY="38.0" prefHeight="49.0" prefWidth="57.0" text="6" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="60.0" layoutY="582.0" prefHeight="62.0" prefWidth="727.0" text="The cost to purchase a skill is 3 Hero Points. When purchasing a skill you receive 1 rank in all attached knacks. If you take 2 skills with the same knack, you will receive 2 ranks in the knack. You may not have a knack higher than rank 3 at character creation." wrapText="true" />
+      <Label fx:id="skillsList" layoutX="60.0" layoutY="582.0" prefHeight="62.0" prefWidth="727.0" text="The cost to purchase a skill is 3 Hero Points. When purchasing a skill you receive 1 rank in all attached knacks. If you take 2 skills with the same knack, you will receive 2 ranks in the knack. You may not have a knack higher than rank 3 at character creation." visible="false" wrapText="true" />
+      <Button fx:id="removeButton" layoutX="398.0" layoutY="351.0" mnemonicParsing="false" onAction="#onRemoveButton" text="&lt;&lt;&lt;" />
    </children>
 </AnchorPane>

@@ -5,13 +5,11 @@ import javafx.collections.ObservableList;
 public class Skill {
     private int id;
     private String name;
-    private boolean isMartial;
     private ObservableList<Knack> knacks;
 
-    public Skill(int id, String name, boolean isMartial) {
+    public Skill(int id, String name) {
         this.id = id;
         this.name = name;
-        this.isMartial = isMartial;
     }
 
     public int getId() {
@@ -28,14 +26,6 @@ public class Skill {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isMartial() {
-        return isMartial;
-    }
-
-    public void setMartial(boolean martial) {
-        isMartial = martial;
     }
 
     public ObservableList<Knack> getKnacks() {

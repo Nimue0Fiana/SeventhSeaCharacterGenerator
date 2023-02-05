@@ -19,7 +19,7 @@
       </Label>
       <Circle fill="#0025e1" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="updateButton" layoutX="713.0" layoutY="389.0" mnemonicParsing="false" onAction="#onUpdateButton" text="Update" />
-      <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="920.0" layoutY="31.0" prefHeight="49.0" prefWidth="55.0" text="7" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="sorceryPointsTotal" alignment="CENTER" layoutX="920.0" layoutY="31.0" prefHeight="49.0" prefWidth="55.0" text="7" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
