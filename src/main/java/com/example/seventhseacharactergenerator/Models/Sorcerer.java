@@ -73,7 +73,7 @@ public class Sorcerer extends PlayerCharacter {
         this.sorcery = sorcery;
     }
 
-    public ObservableList<Sorcery> getSorceries(int i) {
+    public ObservableList<Sorcery> getSorceries() {
         return sorceries;
     }
 

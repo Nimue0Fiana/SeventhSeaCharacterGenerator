@@ -63,6 +63,7 @@ public class personalInfoController {
                         tempCharacter.setName(PCName);
                         tempCharacter.setPlayer(player);
                         tempCharacter.setGender(gender);
+                        tempCharacter.setHeroPoints(100);
                         try {
                                 Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/chooseNationPage-view.fxml"));
                                 Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

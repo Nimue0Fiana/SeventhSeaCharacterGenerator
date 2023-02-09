@@ -53,4 +53,14 @@ public class SwordsmanDegree {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "SwordsmanDegree{" +
+                "id=" + id +
+                ", swordsman_school_id=" + swordsman_school_id +
+                ", degree='" + degree + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

@@ -43,20 +43,32 @@ public class DBSwordsmanSchool {
             return name;
         }
 
-    public static ObservableList<String> getNonNativeSwordSchool(int id) {
-        ObservableList<String> otherSwordSchools = FXCollections.observableArrayList();
+    public static ObservableList<SwordsmanSchool> getNonNativeSwordSchool(int id) {
+        ObservableList<SwordsmanSchool> otherSwordSchools = FXCollections.observableArrayList();
         try {
-            String sql = "SELECT S.name " +
+            String sql = "SELECT S.id school_id, S.name, S.description, S.nation_id, N.name nation_name, N.DESCRIPTION nation_description, N.FAVORED_TRAIT " +
                     "FROM swordsman_schools S " +
+                    "JOIN nations N on S.nation_id = N.id " +
                     "WHERE S.nation_id != ? " +
                     "ORDER BY S.id";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                String name = rs.getString("name");
+                int nationId = rs.getInt("nation_id");
+                String nation_name = rs.getString("nation_name");
+                String nation_description = rs.getString("nation_description");
+                String favored_trait = rs.getString("favored_trait");
 
-                otherSwordSchools.add(name);
+                int schoolId = rs.getInt("school_id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+
+                Nation nation = new Nation(nationId, nation_name, favored_trait, nation_description);
+                SwordsmanSchool school = new SwordsmanSchool(schoolId, name, nation, description);
+
+
+                otherSwordSchools.add(school);
             }
 
         } catch (SQLException e) {

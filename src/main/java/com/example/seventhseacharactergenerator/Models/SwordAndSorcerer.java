@@ -214,7 +214,7 @@ public class SwordAndSorcerer extends PlayerCharacter {
     @Override
     public String toString() {
         return "SwordAndSorcerer{" +
-                "sorceryPoints1=" + sorceryPoints1 +
+                ", sorceryPoints1=" + sorceryPoints1 +
                 ", sorceryPoints2=" + sorceryPoints2 +
                 ", blood=" + blood +
                 ", sorcery=" + sorcery +
@@ -224,6 +224,7 @@ public class SwordAndSorcerer extends PlayerCharacter {
                 ", sorceryDegrees=" + sorceryDegrees +
                 ", swordsmanSchools=" + swordsmanSchools +
                 ", swordsmanDegrees=" + swordsmanDegrees +
+                ", swordsmanKnacks=" + swordsmanKnacks +
                 '}';
     }
 }

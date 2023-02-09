@@ -89,18 +89,19 @@ public class chooseNationController implements Initializable {
                 tempCharacter.setNation(nation);
                 String trait = nation.getFavored_trait();
                 if(trait.equals("resolve")) {
-                        tempCharacter.setResolve(1);
+                        //tempCharacter.setResolve(1);
                 } else if(trait.equals("finesse")) {
-                        tempCharacter.setFinesse(1);
+                        //tempCharacter.setFinesse(1);
+                        nextPage = "/com/example/seventhseacharactergenerator/confirmSwordSchoolPage-view.fxml";
                 } else if (trait.equals("wits")) {
-                        tempCharacter.setWits(1);
+                        //tempCharacter.setWits(1);
                         if(tempCharacter.getGender().equals("male")) {
                                 nextPage = "/com/example/seventhseacharactergenerator/confirmSwordSchoolPage-view.fxml";
                         }
                 } else if (trait.equals("panache")) {
-                        tempCharacter.setPanache(1);
+                        //tempCharacter.setPanache(1);
                 } else if (trait.equals("brawn")) {
-                        tempCharacter.setBrawn(1);
+                        //tempCharacter.setBrawn(1);
                 }
                 try {
                         Parent root = FXMLLoader.load(getClass().getResource(nextPage));

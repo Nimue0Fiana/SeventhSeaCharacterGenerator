@@ -1,5 +1,7 @@
 package com.example.seventhseacharactergenerator.Controllers;
 
+import com.example.seventhseacharactergenerator.DBAccess.DBSorcery;
+import com.example.seventhseacharactergenerator.Models.Sorcery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -59,19 +61,20 @@ public class TwiceBloodedSorceryKnackController implements Initializable {
         private Label sorcery1Name;
 
         @FXML
-        private Label sorcery1Points;
+        private Label sorcery1PointsLabel;
 
         @FXML
         private Label sorcery2Name;
 
         @FXML
-        private Label sorcery2Points;
+        private Label sorcery2PointsLabel;
 
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
-                sorcery1Points.setText(String.valueOf(tempSorcerer.getSorceryPoints1()));
-                sorcery2Points.setText(String.valueOf(tempSorcerer.getSorceryPoints2()));
-                //sorcery1Name.setText();
+                sorcery1PointsLabel.setText(String.valueOf(tempSorcerer.getSorceryPoints1()));
+                sorcery2PointsLabel.setText(String.valueOf(tempSorcerer.getSorceryPoints2()));
+                sorcery1Name.setText(tempSorcerer.getSorceries().get(0).getName());
+                sorcery2Name.setText((tempSorcerer.getSorceries().get(1).getName()));
         }
         @FXML
         public void onAddSelected(ActionEvent actionEvent) {

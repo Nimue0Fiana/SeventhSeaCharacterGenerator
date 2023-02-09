@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSorceryNationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSorceryNationController">
    <children>
       <Label layoutX="146.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
          <font>
@@ -19,23 +17,19 @@
             <Image url="@spike.gif" />
          </image>
       </ImageView>
-      <Button fx:id="avalon" layoutX="86.0" layoutY="254.0" mnemonicParsing="false" onAction="#onAvalon" prefHeight="96.0" prefWidth="104.0" text="Avalon">
+      <Button fx:id="avalon" layoutX="104.0" layoutY="254.0" mnemonicParsing="false" onAction="#onAvalon" prefHeight="96.0" prefWidth="104.0" text="Avalon">
          <font>
             <Font name="Bauhaus 93" size="14.0" />
          </font>
       </Button>
       <Label fx:id="nation2Description" layoutX="194.0" layoutY="105.0" prefHeight="55.0" prefWidth="295.0" text="Label" visible="false" wrapText="true" />
-      <Button fx:id="castille" layoutX="207.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCastille" prefHeight="96.0" prefWidth="104.0" text="Castille">
+
+      <Button fx:id="vodacce" layoutX="248.0" layoutY="254.0" mnemonicParsing="false" onAction="#onVodacce" prefHeight="96.0" prefWidth="104.0" text="Vodacce">
          <font>
             <Font name="Bauhaus 93" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="vodacce" layoutX="322.0" layoutY="254.0" mnemonicParsing="false" onAction="#onVodacce" prefHeight="96.0" prefWidth="104.0" text="Vodacce">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="montaigne" layoutX="437.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMontaigne" prefHeight="96.0" prefWidth="104.0" text="Montaigne">
+      <Button fx:id="montaigne" layoutX="385.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMontaigne" prefHeight="96.0" prefWidth="104.0" text="Montaigne">
          <font>
             <Font name="Bauhaus 93" size="14.0" />
          </font>

@@ -59,9 +59,7 @@ public class confirmSorceryController implements Initializable {
         private Button twiceBlooded; // Value injected by FXMLLoader
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
-                if(tempCharacter.getId() == -1) {
-                        tempCharacter.setHeroPoints(100);
-                }
+
                 heroPointsTotal.setText(String.valueOf(tempCharacter.getHeroPoints()));
         }
 
@@ -107,6 +105,8 @@ public class confirmSorceryController implements Initializable {
 
         @FXML
         void onContinue(ActionEvent event) {
+                System.out.println(blood);
+                System.out.println(isSorcerer);
                 if(isSorcerer) {
                         tempCharacter.setSorcerer(true);
                         tempSorcerer = tempSorcerer.transformPCToSorcerer(tempCharacter);
@@ -138,6 +138,7 @@ public class confirmSorceryController implements Initializable {
                         sorceryChoiceDescription.setStyle("-fx-text-fill:RED;-fx-font-weight: bold;");
                         sorceryChoiceDescription.setText("No choice detected. Please choose an option below before continuing.");
                 } else {
+                        System.out.println(tempSorcerer);
                         try {
                                 Parent root = FXMLLoader.load(getClass().getResource(nextPage));
                                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

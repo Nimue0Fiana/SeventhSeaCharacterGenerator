@@ -71,17 +71,17 @@ public class confirmSwordController implements Initializable {
 
     @FXML
     void onMyNation(ActionEvent event) {
+        swordSchoolDescription.setText(DBSwordsmanSchool.getSwordSchoolDescById(nationId));
         if (heroType == 0) {
             nationId = tempCharacter.getNation().getId();
             swordsmanSchool = DBSwordsmanSchool.getSwordSchoolById(nationId);
             schoolName = DBSwordsmanSchool.getSwordSchoolNameById(nationId);
-            schoolDesc = DBSwordsmanSchool.getSwordSchoolDescById(nationId);
+
 
         } else if (heroType == 1) {
             nationId = tempSorcerer.getNation().getId();
             swordsmanSchool = DBSwordsmanSchool.getSwordSchoolById(nationId);
             schoolName = DBSwordsmanSchool.getSwordSchoolNameById(nationId);
-            schoolDesc = DBSwordsmanSchool.getSwordSchoolDescById(nationId);
         }
         //25 points
         isSwordsman = true;
@@ -108,47 +108,63 @@ public class confirmSwordController implements Initializable {
     @FXML
     void onContinue(ActionEvent event) {
         tempCharacter.setSwordsman(isSwordsman);
-
+        //if character is a swordsman
         if (tempCharacter.isSwordsman()) {
-            if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
+            //if character is also a sorcerer
+            if (tempCharacter.isSorcerer()) {
+                //if that sorcerer is double-blooded
                 if (tempSorcerer.getBlood() == 3) {
                     tempSwordSorcerer = tempSwordSorcerer.transformDoubleSorcererToSwordSorcerer(tempSorcerer);
+                    //if this double-blooded sorcerer wants a school of their own nation
                     if(swordsmanSchool != null) {
                         tempSwordSorcerer.addSwordsmanSchool(swordsmanSchool);
                         tempSwordSorcerer.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                         tempSwordSorcerer.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 25);
-                    } else {
+                    //if the double-blooded sorcerer wants a school of a different nation
+                    } else if(swordsmanSchool == null) {
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 35);
                     }
+                //if that sorcerer is not double-blooded (has only 1 type of sorcery)
                 } else {
+                    //if the sorcerer wants a school of their own nation
                     if(swordsmanSchool != null) {
                         tempSwordSorcerer = tempSwordSorcerer.transformSorcererToSwordAndSorcerer(tempSorcerer);
                         tempSwordSorcerer.addSwordsmanSchool(swordsmanSchool);
                         tempSwordSorcerer.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                         tempSwordSorcerer.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 25);
-                    } else {
+                    //if the sorcerer wants a school of another nation
+                    } else if(swordsmanSchool == null) {
                         tempSwordSorcerer = tempSwordSorcerer.transformSorcererToSwordAndSorcerer(tempSorcerer);
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 35);
                     }
 
                 }
+
+
+            //if the character is NOT a sorcerer
             } else if (!tempCharacter.isSorcerer()) {
+                //if the character wants a school of their own nation
                 if(swordsmanSchool != null) {
                     tempSwordsman = tempSwordsman.transformPCToSwordsman(tempCharacter);
                     tempSwordsman.addSwordsmanSchool(swordsmanSchool);
                     tempSwordsman.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                     tempSwordsman.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                     tempSwordsman.setHeroPoints(tempSwordsman.getHeroPoints() - 25);
-                } else {
+                //if the character wants a school of another nation
+                } else if(swordsmanSchool == null){
                     tempSwordsman = tempSwordsman.transformPCToSwordsman(tempCharacter);
                     tempSwordsman.setHeroPoints(tempSwordsman.getHeroPoints() - 35);
                 }
 
             }
-            System.out.println(String.valueOf(tempSwordsman.getHeroPoints()));
+            System.out.println("Temp Character: " + tempCharacter);
+            System.out.println("Temp Swordsman: " + tempSwordsman.getName() + " " + tempSwordsman);
+            System.out.println("Temp Sword & Sorcerer: " + tempSwordSorcerer.getName() + " " + tempSwordSorcerer);
         }
+
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource(nextPage));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -68,4 +68,16 @@ public class SwordsmanKnack {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "SwordsmanKnack{" +
+                "id=" + id +
+                ", skill_id=" + skill_id +
+                ", school_id=" + school_id +
+                ", name='" + name + '\'' +
+                ", knackLevel=" + knackLevel +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

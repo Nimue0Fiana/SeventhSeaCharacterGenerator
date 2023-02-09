@@ -4,6 +4,7 @@
 
 package com.example.seventhseacharactergenerator.Controllers;
 
+import com.example.seventhseacharactergenerator.Models.Knack;
 import com.example.seventhseacharactergenerator.Models.SorceryKnack;
 import com.example.seventhseacharactergenerator.Models.SwordsmanKnack;
 import javafx.collections.FXCollections;
@@ -15,11 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -71,10 +68,14 @@ public class swordsmanKnacksController implements Initializable {
             heroPointsTotal.setText((String.valueOf(tempSwordSorcerer.getHeroPoints())));
             swordsmanKnacks = tempSwordSorcerer.getSwordsmanKnacks();
             initHeroPoints = tempSwordSorcerer.getHeroPoints();
+            System.out.println(swordsmanKnacks);
+            System.out.println(tempSwordSorcerer);
         } else {
             heroPointsTotal.setText(String.valueOf(tempSwordsman.getHeroPoints()));
             swordsmanKnacks = tempSwordsman.getSwordsmanKnacks();
             initHeroPoints = tempSwordsman.getHeroPoints();
+            System.out.println(swordsmanKnacks);
+            System.out.println(tempSwordsman);
         }
         knackTable.setItems(swordsmanKnacks);
 
@@ -100,38 +101,50 @@ public class swordsmanKnacksController implements Initializable {
 
     @FXML
     void onUpdateButton(ActionEvent event) {
-        int heroPoints;
-        int currKnackTotal = 0;
-        knackTable.getSelectionModel().getSelectedItem().setKnackLevel(rankValue.getValue());
-        knackTable.refresh();
-
-        for (SwordsmanKnack sk : swordsmanKnacks) {
-            currKnackTotal += sk.getKnackLevel();
-        }
-        System.out.println("current knack total: " + currKnackTotal);
-        if (tempCharacter.isSorcerer()) {
-
-            heroPoints = initHeroPoints - (currKnackTotal - initialKnackTotal);
-            heroPointsTotal.setText(String.valueOf(heroPoints));
-            tempSwordSorcerer.setHeroPoints(heroPoints);
+        SwordsmanKnack selectedKnack = knackTable.getSelectionModel().getSelectedItem();
+        if (selectedKnack == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Please choose a knack and try again.");
+            alert.showAndWait();
         } else {
-            heroPoints = initHeroPoints - (currKnackTotal - initialKnackTotal);
-            heroPointsTotal.setText(String.valueOf(heroPoints));
-            tempSwordsman.setHeroPoints(heroPoints);
-        }
+            int heroPoints;
+            int currKnackTotal = 0;
+            knackTable.getSelectionModel().getSelectedItem().setKnackLevel(rankValue.getValue());
+            knackTable.refresh();
 
+            for (SwordsmanKnack sk : swordsmanKnacks) {
+                currKnackTotal += sk.getKnackLevel();
+            }
+            System.out.println("current knack total: " + currKnackTotal);
+            if (tempCharacter.isSorcerer()) {
+
+                heroPoints = initHeroPoints - (currKnackTotal - initialKnackTotal);
+                heroPointsTotal.setText(String.valueOf(heroPoints));
+                tempSwordSorcerer.setHeroPoints(heroPoints);
+            } else {
+                heroPoints = initHeroPoints - (currKnackTotal - initialKnackTotal);
+                heroPointsTotal.setText(String.valueOf(heroPoints));
+                tempSwordsman.setHeroPoints(heroPoints);
+            }
+        }
     }
 
     @FXML
     void onContinueButton(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/increaseTraitsPage-view.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        System.out.println(tempSwordsman);
+        System.out.println(tempSwordSorcerer);
+        if (initHeroPoints < 0) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "You've spent too many points.\n Reduce some skills and try again.");
+            alert.showAndWait();
+        } else {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/increaseTraitsPage-view.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

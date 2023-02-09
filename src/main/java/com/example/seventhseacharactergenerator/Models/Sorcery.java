@@ -58,4 +58,15 @@ public class Sorcery {
     public void setKnacks(ObservableList<SorceryKnack> knacks) {
         this.knacks = knacks;
     }
+
+    @Override
+    public String toString() {
+        return "Sorcery{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", degrees=" + degrees +
+                ", knacks=" + knacks +
+                '}';
+    }
 }

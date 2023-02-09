@@ -47,4 +47,14 @@ public class SwordsmanSchool {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "SwordsmanSchool{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nation=" + nation +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

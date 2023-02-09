@@ -1,7 +1,9 @@
 package com.example.seventhseacharactergenerator;
 
+import com.example.seventhseacharactergenerator.DBAccess.DBSorcery;
 import com.example.seventhseacharactergenerator.Helper.JDBC;
 import com.example.seventhseacharactergenerator.Models.Nation;
+import com.example.seventhseacharactergenerator.Models.Sorcery;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,6 +29,7 @@ public class CharacterApplication extends Application {
     }
 
     public static void main(String[] args) {
+
         JDBC.openConnection();
         launch(args);
         JDBC.closeConnection();
