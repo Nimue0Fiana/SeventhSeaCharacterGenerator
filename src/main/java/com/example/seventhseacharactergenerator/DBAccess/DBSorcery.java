@@ -36,6 +36,7 @@ public class DBSorcery {
                     "FROM sorceries S " +
                     "WHERE S.nation_id = ?";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int sorceryId = rs.getInt("id");
