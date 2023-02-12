@@ -50,11 +50,6 @@ public class SwordsmanSchool {
 
     @Override
     public String toString() {
-        return "SwordsmanSchool{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", nation=" + nation +
-                ", description='" + description + '\'' +
-                '}';
+        return name;
     }
 }

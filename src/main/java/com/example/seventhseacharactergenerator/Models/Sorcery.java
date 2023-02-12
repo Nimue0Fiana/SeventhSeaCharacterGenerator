@@ -61,12 +61,8 @@ public class Sorcery {
 
     @Override
     public String toString() {
-        return "Sorcery{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", degrees=" + degrees +
-                ", knacks=" + knacks +
-                '}';
+        return name;
     }
+
+
 }

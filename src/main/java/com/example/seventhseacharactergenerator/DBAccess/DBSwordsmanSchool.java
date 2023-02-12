@@ -27,21 +27,21 @@ public class DBSwordsmanSchool {
         return description;
     }
 
-        public static String getSwordSchoolNameById(int id) {
-            String name;
-            try {
-                String sql = "SELECT S.name " +
-                        "FROM swordsman_schools S " +
-                        "WHERE S.nation_id = ?";
-                PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-                ps.setInt(1, id);
-                ResultSet rs = ps.executeQuery();
-                name = rs.getString("name");
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            return name;
+    public static String getSwordSchoolNameById(int id) {
+        String name;
+        try {
+            String sql = "SELECT S.name " +
+                    "FROM swordsman_schools S " +
+                    "WHERE S.nation_id = ?";
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            name = rs.getString("name");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+        return name;
+    }
 
     public static ObservableList<SwordsmanSchool> getNonNativeSwordSchool(int id) {
         ObservableList<SwordsmanSchool> otherSwordSchools = FXCollections.observableArrayList();
@@ -54,7 +54,7 @@ public class DBSwordsmanSchool {
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 int nationId = rs.getInt("nation_id");
                 String nation_name = rs.getString("nation_name");
                 String nation_description = rs.getString("nation_description");
@@ -78,8 +78,8 @@ public class DBSwordsmanSchool {
     }
 
     public static String getSchoolDescByName(String schoolName) {
-        String description=null;
-        try{
+        String description = null;
+        try {
             String sql = "SELECT S.description " +
                     "FROM swordsman_schools S " +
                     "WHERE S.name = ?";
@@ -88,7 +88,7 @@ public class DBSwordsmanSchool {
             ps.setString(1, schoolName);
             ResultSet rs = ps.executeQuery();
             description = rs.getString("description");
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return description;
@@ -104,7 +104,7 @@ public class DBSwordsmanSchool {
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
+            while (rs.next()) {
                 int schoolId = rs.getInt("id");
                 int nationId = rs.getInt("nation_id");
                 String name = rs.getString("name");

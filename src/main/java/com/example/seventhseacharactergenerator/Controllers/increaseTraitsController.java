@@ -300,12 +300,33 @@ public class increaseTraitsController implements Initializable {
                 } else {
                         if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
                                 tempSwordSorcerer.setHeroPoints(heroPoints);
+                                tempSwordSorcerer.setBrawn(brawn + 1);
+                                tempSwordSorcerer.setFinesse(finesse + 1);
+                                tempSwordSorcerer.setWits(wits + 1);
+                                tempSwordSorcerer.setResolve(resolve + 1);
+                                tempSwordSorcerer.setPanache(panache + 1);
                         } else if (tempCharacter.isSwordsman()) {
                                 tempSwordsman.setHeroPoints(heroPoints);
+                                tempSwordsman.setBrawn(brawn + 1);
+                                tempSwordsman.setFinesse(finesse + 1);
+                                tempSwordsman.setWits(wits + 1);
+                                tempSwordsman.setResolve(resolve + 1);
+                                tempSwordsman.setPanache(panache + 1);
                         } else if (tempCharacter.isSorcerer()) {
                                 tempSorcerer.setHeroPoints(heroPoints);
+                                tempSorcerer.setBrawn(brawn + 1);
+                                tempSorcerer.setFinesse(finesse + 1);
+                                tempSorcerer.setWits(wits + 1);
+                                tempSorcerer.setResolve(resolve + 1);
+                                tempSorcerer.setPanache(panache + 1);
                         } else {
                                 tempCharacter.setHeroPoints(heroPoints);
+                                tempCharacter.setHeroPoints(heroPoints);
+                                tempCharacter.setBrawn(brawn + 1);
+                                tempCharacter.setFinesse(finesse + 1);
+                                tempCharacter.setWits(wits + 1);
+                                tempCharacter.setResolve(resolve + 1);
+                                tempCharacter.setPanache(panache + 1);
                         }
                         try {
                                 Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/chooseAdvantagesPage-view.fxml"));

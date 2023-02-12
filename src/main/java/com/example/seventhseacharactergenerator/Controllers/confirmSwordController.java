@@ -63,29 +63,21 @@ public class confirmSwordController implements Initializable {
         if (tempCharacter.isSorcerer()) {
             heroType = 1;
             heroPointsTotal.setText(String.valueOf(tempSorcerer.getHeroPoints()));
+            nationId = tempSorcerer.getNation().getId();
         } else {
             heroType = 0;
             heroPointsTotal.setText(String.valueOf(tempCharacter.getHeroPoints()));
+            nationId = tempCharacter.getNation().getId();
         }
     }
 
     @FXML
     void onMyNation(ActionEvent event) {
-        swordSchoolDescription.setText(DBSwordsmanSchool.getSwordSchoolDescById(nationId));
-        if (heroType == 0) {
-            nationId = tempCharacter.getNation().getId();
-            swordsmanSchool = DBSwordsmanSchool.getSwordSchoolById(nationId);
-            schoolName = DBSwordsmanSchool.getSwordSchoolNameById(nationId);
-
-
-        } else if (heroType == 1) {
-            nationId = tempSorcerer.getNation().getId();
-            swordsmanSchool = DBSwordsmanSchool.getSwordSchoolById(nationId);
-            schoolName = DBSwordsmanSchool.getSwordSchoolNameById(nationId);
-        }
-        //25 points
         isSwordsman = true;
         swordSchoolDescription.setVisible(true);
+        swordsmanSchool = DBSwordsmanSchool.getSwordSchoolById(nationId);
+        schoolName = DBSwordsmanSchool.getSwordSchoolNameById(nationId);
+        schoolDesc = DBSwordsmanSchool.getSwordSchoolDescById(nationId);
         swordSchoolDescription.setText("Cost: 25 points\nSchool: " + schoolName + " - " + schoolDesc);
         nextPage = "/com/example/seventhseacharactergenerator/swordKnacksPage-view.fxml";
     }
@@ -116,26 +108,26 @@ public class confirmSwordController implements Initializable {
                 if (tempSorcerer.getBlood() == 3) {
                     tempSwordSorcerer = tempSwordSorcerer.transformDoubleSorcererToSwordSorcerer(tempSorcerer);
                     //if this double-blooded sorcerer wants a school of their own nation
-                    if(swordsmanSchool != null) {
+                    if (swordsmanSchool != null) {
                         tempSwordSorcerer.addSwordsmanSchool(swordsmanSchool);
                         tempSwordSorcerer.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                         tempSwordSorcerer.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 25);
-                    //if the double-blooded sorcerer wants a school of a different nation
-                    } else if(swordsmanSchool == null) {
+                        //if the double-blooded sorcerer wants a school of a different nation
+                    } else if (swordsmanSchool == null) {
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 35);
                     }
-                //if that sorcerer is not double-blooded (has only 1 type of sorcery)
+                    //if that sorcerer is not double-blooded (has only 1 type of sorcery)
                 } else {
                     //if the sorcerer wants a school of their own nation
-                    if(swordsmanSchool != null) {
+                    if (swordsmanSchool != null) {
                         tempSwordSorcerer = tempSwordSorcerer.transformSorcererToSwordAndSorcerer(tempSorcerer);
                         tempSwordSorcerer.addSwordsmanSchool(swordsmanSchool);
                         tempSwordSorcerer.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                         tempSwordSorcerer.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 25);
-                    //if the sorcerer wants a school of another nation
-                    } else if(swordsmanSchool == null) {
+                        //if the sorcerer wants a school of another nation
+                    } else if (swordsmanSchool == null) {
                         tempSwordSorcerer = tempSwordSorcerer.transformSorcererToSwordAndSorcerer(tempSorcerer);
                         tempSwordSorcerer.setHeroPoints(tempSwordSorcerer.getHeroPoints() - 35);
                     }
@@ -143,17 +135,18 @@ public class confirmSwordController implements Initializable {
                 }
 
 
-            //if the character is NOT a sorcerer
+                //if the character is NOT a sorcerer
             } else if (!tempCharacter.isSorcerer()) {
                 //if the character wants a school of their own nation
-                if(swordsmanSchool != null) {
+                if (swordsmanSchool != null) {
                     tempSwordsman = tempSwordsman.transformPCToSwordsman(tempCharacter);
                     tempSwordsman.addSwordsmanSchool(swordsmanSchool);
+                    System.out.println(tempSwordsman.getSwordsmanSchools());
                     tempSwordsman.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(swordsmanSchool.getId()));
                     tempSwordsman.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(swordsmanSchool.getId()));
                     tempSwordsman.setHeroPoints(tempSwordsman.getHeroPoints() - 25);
-                //if the character wants a school of another nation
-                } else if(swordsmanSchool == null){
+                    //if the character wants a school of another nation
+                } else if (swordsmanSchool == null) {
                     tempSwordsman = tempSwordsman.transformPCToSwordsman(tempCharacter);
                     tempSwordsman.setHeroPoints(tempSwordsman.getHeroPoints() - 35);
                 }
