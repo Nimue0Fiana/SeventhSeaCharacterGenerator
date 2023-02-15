@@ -98,6 +98,7 @@ public class chooseSorceryNationController implements Initializable {
             tempSorcerer.addSorceryDegree(DBSorceryDegree.getSorceryDegreeBySorcery(sorcery.getId()));
             ObservableList<SorceryKnack> sorceryKnacks = DBSorceryKnack.getAllKnacksForSorcery(sorcery.getId());
             tempSorcerer.setSorceryKnacks2(sorceryKnacks);
+            System.out.println(tempSorcerer.getSorceries().size());
 
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/TwiceBloodedSorceryKnack-view.fxml"));

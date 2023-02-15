@@ -3,20 +3,19 @@ package com.example.seventhseacharactergenerator.DBAccess;
 import com.example.seventhseacharactergenerator.Helper.JDBC;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DBChar_Knacks {
-    public static int addCharKnacks(int lastPcId, int knackId, int rank) {
+public class DBChar_Sword_Degrees {
+
+    public static int addCharSwordDegree(int lastPcId, int swordDegreeId) {
         int rowsAffected = 0;
         try {
-            String sql = "INSERT INTO char_knacks (character_id, knack_id, rank_level) " +
-                    "VALUES (?, ?, ?)";
+            String sql = "INSERT INTO char_swordsman_degrees (character_id, swordsman_degree_id) " +
+                    "VALUES (?, ?)";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
 
-                ps.setInt(1, lastPcId);
-                ps.setInt(2, knackId);
-                ps.setInt(3, rank);
+            ps.setInt(1, lastPcId);
+            ps.setInt(2, swordDegreeId);
 
             rowsAffected = ps.executeUpdate();
         } catch (SQLException e) {

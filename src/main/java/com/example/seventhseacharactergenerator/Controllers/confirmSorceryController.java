@@ -106,7 +106,6 @@ public class confirmSorceryController implements Initializable {
         @FXML
         void onContinue(ActionEvent event) {
                 System.out.println(blood);
-                System.out.println(isSorcerer);
                 if(isSorcerer) {
                         tempCharacter.setSorcerer(true);
                         tempSorcerer = tempSorcerer.transformPCToSorcerer(tempCharacter);

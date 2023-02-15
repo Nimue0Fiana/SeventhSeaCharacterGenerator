@@ -51,7 +51,7 @@ public class savedCharactersReportController implements Initializable {
         charNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         playerCol.setCellValueFactory(new PropertyValueFactory<>("player"));
         genderCol.setCellValueFactory(new PropertyValueFactory<>("gender"));
-        nationCol.setCellValueFactory(new PropertyValueFactory<>("nation"));
+        nationCol.setCellValueFactory(new PropertyValueFactory<>("nationName"));
         pointsCol.setCellValueFactory(new PropertyValueFactory<>("heroPoints"));
         timeCol.setCellValueFactory(new PropertyValueFactory<>("createDate"));
     }

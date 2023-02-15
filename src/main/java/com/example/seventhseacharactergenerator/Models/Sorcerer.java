@@ -63,6 +63,7 @@ public class Sorcerer extends PlayerCharacter {
         return blood;
     }
     public void setBlood(int blood) {
+        this.blood = blood;
     }
 
     public Sorcery getSorcery() {
