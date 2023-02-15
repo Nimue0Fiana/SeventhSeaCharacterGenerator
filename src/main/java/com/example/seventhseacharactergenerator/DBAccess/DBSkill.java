@@ -31,4 +31,49 @@ public class DBSkill {
         }
         return skills;
     }
+
+    public static ObservableList<Skill> lookupSkill(String q) {
+        ObservableList<Skill> skills = FXCollections.observableArrayList();
+        try {
+            String sql = "SELECT S.id, S.name " +
+                    "FROM skills S " +
+                    "WHERE S.name LIKE ?";
+
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setString(1, "%" + q + "%");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+
+                Skill skill = new Skill(id, name);
+                skills.add(skill);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return skills;
+
+    }
+
+    public static Skill lookupSkillById(int skillId) {
+        Skill searchedSkill = null;
+        try {
+            String sql = "SELECT id, name " +
+                    "FROM skills " +
+                    "WHERE skills.id = ?";
+            PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
+            ps.setInt(1, skillId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+
+                searchedSkill = new Skill(id, name);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return searchedSkill;
+    }
 }

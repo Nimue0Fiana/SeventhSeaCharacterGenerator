@@ -21,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -35,7 +37,8 @@ import static com.example.seventhseacharactergenerator.Controllers.confirmSwordC
 import static com.example.seventhseacharactergenerator.Controllers.personalInfoController.tempCharacter;
 
 public class skillsController implements Initializable {
-
+    @FXML // fx:id= "searchField"
+    public TextField searchField; //Value injected by FXMLLoader
     private int initHeroPoints;
     private ObservableList<Skill> allSkills = DBSkill.getAllSkills();
     private ObservableList<Skill> purchasedSkills = FXCollections.observableArrayList();
@@ -204,6 +207,72 @@ public class skillsController implements Initializable {
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public void onEnter(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            if(searchField.getText().isBlank()) {
+
+            } else {
+                try {
+                    String q = searchField.getText();
+                    ObservableList<Skill> skills = DBSkill.lookupSkill(q);
+                    if (skills.size() == 0) {
+                        int skillId = Integer.parseInt(q);
+                        Skill s = DBSkill.lookupSkillById(skillId);
+                        if (s != null) {
+                            skills.add(s);
+                        } else if (s == null) {
+                            throw new Exception("No results found with that ID.");
+                        }
+                    }
+                    availableSkillsTable.setItems(skills);
+
+                } catch (NumberFormatException excpt) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Dialog");
+                    alert.setContentText("We couldn't find a name matching that entry. \nPlease try again.");
+                    alert.showAndWait();
+                } catch (Exception excpt) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error Dialog");
+                    alert.setContentText(excpt.getMessage() + "\nPlease try again.");
+                    alert.showAndWait();
+                }
+            }
+        }
+    }
+
+    public void onSearchButton(ActionEvent actionEvent) {
+        if(searchField.getText().isBlank()) {
+
+        } else {
+            try {
+                String q = searchField.getText();
+                ObservableList<Skill> skills = DBSkill.lookupSkill(q);
+                if (skills.size() == 0) {
+                    int skillId = Integer.parseInt(q);
+                    Skill s = DBSkill.lookupSkillById(skillId);
+                    if (s != null) {
+                        skills.add(s);
+                    } else if (s == null) {
+                        throw new Exception("No results found with that ID.");
+                    }
+                }
+                availableSkillsTable.setItems(skills);
+
+            } catch (NumberFormatException excpt) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Dialog");
+                alert.setContentText("We couldn't find a name matching that entry. \nPlease try again.");
+                alert.showAndWait();
+            } catch (Exception excpt) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Dialog");
+                alert.setContentText(excpt.getMessage() + "\nPlease try again.");
+                alert.showAndWait();
             }
         }
     }
