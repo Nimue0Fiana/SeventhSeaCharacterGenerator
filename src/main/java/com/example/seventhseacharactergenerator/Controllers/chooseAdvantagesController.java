@@ -48,9 +48,6 @@ public class chooseAdvantagesController implements Initializable {
     @FXML // fx:id="availAdvantageCost"
     private TableColumn<?, ?> availAdvantageCost; // Value injected by FXMLLoader
 
-    @FXML // fx:id="availableAdvantageSearch"
-    private TextField availableAdvantageSearch; // Value injected by FXMLLoader
-
 
     @FXML // fx:id="chosenAdvantages"
     private TableView<Advantages> chosenAdvantages; // Value injected by FXMLLoader
@@ -58,11 +55,6 @@ public class chooseAdvantagesController implements Initializable {
     private TableColumn<?, ?> chosenAdvantageName; // Value injected by FXMLLoader
     @FXML // fx:id="chosenAdvantageDescription"
     private TableColumn<?, ?> chosenAdvantageDescription; // Value injected by FXMLLoader
-
-
-    @FXML // fx:id="chosenAdvantageSearch"
-    private TextField chosenAdvantageSearch; // Value injected by FXMLLoader
-
 
     @FXML // fx:id="heroPointsTotal"
     private Label heroPointsTotal; // Value injected by FXMLLoader
@@ -130,51 +122,6 @@ public class chooseAdvantagesController implements Initializable {
         }
     }
 
-    @FXML
-    void onAvailableEnter(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onAvailableGo(ActionEvent event) {
-        /*try {
-            String q = partQueryTF.getText();
-            ObservableList<Part> parts = Inventory.lookupPart(q);
-            if (parts.size() == 0) {
-                int part = Integer.parseInt(q);
-                Part p = Inventory.lookupPart(part);
-                if (p != null) {
-                    parts.add(p);
-                } else if (p == null) {
-                    throw new Exception("No results found with that ID.");
-                }
-            }
-            partsTable.setItems(parts);
-
-        } catch(NumberFormatException excpt){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Dialog");
-            alert.setContentText("We couldn't find a name matching that entry. \nPlease try again.");
-            alert.showAndWait();
-        }
-        catch (Exception excpt) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Dialog");
-            alert.setContentText(excpt.getMessage() + "\nPlease try again.");
-            alert.showAndWait();
-        }*/
-
-    }
-
-    @FXML
-    void onChosenEnter(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onChosenGo(ActionEvent event) {
-
-    }
 
     @FXML
     void onContinueButton(ActionEvent event) {

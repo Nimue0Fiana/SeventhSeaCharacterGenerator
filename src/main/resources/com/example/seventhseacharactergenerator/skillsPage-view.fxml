@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.skillsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="930.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.skillsController">
    <children>
       <Label layoutX="78.0" layoutY="21.0" prefHeight="81.0" prefWidth="680.0" text="Pick your skills..." textAlignment="CENTER" textFill="#ae8600" wrapText="true">
          <font>
@@ -22,10 +25,6 @@
           <TableColumn fx:id="chosenSkillCol" prefWidth="303.0" text="Chosen Skills" />
         </columns>
       </TableView>
-      <TextField fx:id="availableSearch" layoutX="181.0" layoutY="100.0" onAction="#onAvailableSearchEnter" />
-      <Button fx:id="availableGoButton" layoutX="332.0" layoutY="100.0" mnemonicParsing="false" onAction="#onChosenGoButton" text="Go" />
-      <TextField fx:id="chosenSearch" layoutX="607.0" layoutY="100.0" onAction="#onChosenSearchEnter" />
-      <Button fx:id="chosenGoButton" layoutX="756.0" layoutY="100.0" mnemonicParsing="false" onAction="#onAvailableGoButton" text="Go" />
       <Circle fill="#ae8600" layoutX="859.0" layoutY="62.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="addButton" layoutX="398.0" layoutY="295.0" mnemonicParsing="false" onAction="#onAddButton" text="&gt;&gt;&gt;" />
       <Button fx:id="continueButton" layoutX="848.0" layoutY="646.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />

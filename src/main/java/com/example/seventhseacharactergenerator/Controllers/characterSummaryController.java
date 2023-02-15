@@ -4,26 +4,34 @@ package com.example.seventhseacharactergenerator.Controllers;
  * Sample Skeleton for 'characterSummaryPage.fxml' Controller Class
  */
 
-import com.example.seventhseacharactergenerator.Models.Advantages;
-import com.example.seventhseacharactergenerator.Models.Knack;
-import com.example.seventhseacharactergenerator.Models.SorceryKnack;
-import com.example.seventhseacharactergenerator.Models.SwordsmanKnack;
+import com.example.seventhseacharactergenerator.DBAccess.DBChar_Advantages;
+import com.example.seventhseacharactergenerator.DBAccess.DBChar_Knacks;
+import com.example.seventhseacharactergenerator.DBAccess.DBChar_Skills;
+import com.example.seventhseacharactergenerator.DBAccess.DBPlayerCharacter;
+import com.example.seventhseacharactergenerator.Models.*;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import static com.example.seventhseacharactergenerator.Controllers.confirmSorceryController.tempSorcerer;
@@ -32,24 +40,25 @@ import static com.example.seventhseacharactergenerator.Controllers.confirmSwordC
 import static com.example.seventhseacharactergenerator.Controllers.personalInfoController.tempCharacter;
 
 public class characterSummaryController implements Initializable {
-
+    int heroPoints;
     int brawn;
     int finesse;
     int wits;
     int resolve;
     int panache;
-
+    String gender;
     String name;
     String playerName;
     String nation;
+    int nation_id;
     String sorcery;
     String swordsmanSchool;
 
     ObservableList<Advantages> advantages;
     ObservableList<SorceryKnack> sorceryKnacks;
     ObservableList<SwordsmanKnack> swordsmanKnacks;
-
     ObservableList<Knack> knacks;
+    ObservableList<Skill> skills;
     @FXML
     public Circle brawn1;
 
@@ -160,13 +169,14 @@ public class characterSummaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("TempChar: " + tempCharacter);
-        System.out.println("TempSorcerer: " + tempSorcerer.getSorcery().getName() + tempSorcerer.getSorceries());
-        System.out.println(tempSwordsman);
-        System.out.println("tempSwordSorcerer: " + tempSwordSorcerer.getSorcery() + tempSwordSorcerer.getSorceries());
+        //System.out.println("TempChar: " + tempCharacter);
+        //System.out.println("TempSorcerer: " + tempSorcerer.getSorcery().getName() + tempSorcerer.getSorceries());
+        //System.out.println(tempSwordsman);
+        //System.out.println("tempSwordSorcerer: " + tempSwordSorcerer.getSorcery() + tempSwordSorcerer.getSorceries());
         if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
+            gender = tempSwordSorcerer.getGender();
+            heroPoints = tempSwordSorcerer.getHeroPoints();
             brawn = tempSwordSorcerer.getBrawn();
-            System.out.println(tempSwordSorcerer.getBrawn());
             finesse = tempSwordSorcerer.getFinesse();
             wits = tempSwordSorcerer.getWits();
             resolve = tempSwordSorcerer.getResolve();
@@ -175,6 +185,7 @@ public class characterSummaryController implements Initializable {
             name = tempSwordSorcerer.getName();
             playerName = tempSwordSorcerer.getPlayer();
             nation = tempSwordSorcerer.getNation().getNation_name();
+            nation_id = tempSwordSorcerer.getNation().getId();
             sorcery = tempSwordSorcerer.getSorceries().toString();
             if (tempSwordSorcerer.getSorceries().size() == 0) {
                 sorcery = tempSwordSorcerer.getSorcery().getName();
@@ -187,9 +198,12 @@ public class characterSummaryController implements Initializable {
 
             swordsmanKnacks = tempSwordSorcerer.getSwordsmanKnacks();
 
+            skills = tempSwordSorcerer.getSkills();
             knacks = tempSwordSorcerer.getKnacks();
 
         } else if (tempCharacter.isSwordsman()) {
+            gender = tempSwordsman.getGender();
+            heroPoints = tempSwordsman.getHeroPoints();
             brawn = tempSwordsman.getBrawn();
             finesse = tempSwordsman.getFinesse();
             wits = tempSwordsman.getWits();
@@ -199,14 +213,18 @@ public class characterSummaryController implements Initializable {
             name = tempSwordsman.getName();
             playerName = tempSwordsman.getPlayer();
             nation = tempSwordsman.getNation().getNation_name();
+            nation_id = tempSwordsman.getNation().getId();
             sorcery = "N/A";
             swordsmanSchool = tempSwordsman.getSwordsmanSchools().toString();
             advantages = tempSwordsman.getAdvantages();
 
             swordsmanKnacks = tempSwordsman.getSwordsmanKnacks();
 
+            skills = tempSwordsman.getSkills();
             knacks = tempSwordsman.getKnacks();
         } else if (tempCharacter.isSorcerer()) {
+            gender = tempSorcerer.getGender();
+            heroPoints = tempSorcerer.getHeroPoints();
             brawn = tempSorcerer.getBrawn();
             finesse = tempSorcerer.getFinesse();
             wits = tempSorcerer.getWits();
@@ -216,6 +234,7 @@ public class characterSummaryController implements Initializable {
             name = tempSorcerer.getName();
             playerName = tempSorcerer.getPlayer();
             nation = tempSorcerer.getNation().getNation_name();
+            nation_id = tempSorcerer.getNation().getId();
             sorcery = tempSorcerer.getSorceries().toString();
             if (tempSorcerer.getSorceries() == null) {
                 sorcery = tempSorcerer.getSorcery().getName();
@@ -226,9 +245,11 @@ public class characterSummaryController implements Initializable {
             sorceryKnacks = tempSorcerer.getSorceryKnacks1();
             sorceryKnacks.addAll(tempSorcerer.getSorceryKnacks2());
 
-
+            skills = tempSorcerer.getSkills();
             knacks = tempSorcerer.getKnacks();
         } else {
+            gender = tempCharacter.getGender();
+            heroPoints = tempCharacter.getHeroPoints();
             brawn = tempCharacter.getBrawn();
             finesse = tempCharacter.getFinesse();
             wits = tempCharacter.getWits();
@@ -238,11 +259,13 @@ public class characterSummaryController implements Initializable {
             name = tempCharacter.getName();
             playerName = tempCharacter.getPlayer();
             nation = tempCharacter.getNation().getNation_name();
+            nation_id = tempCharacter.getNation().getId();
             sorcery = "N/A";
             swordsmanSchool = "N/A";
 
             advantages = tempCharacter.getAdvantages();
 
+            skills = tempCharacter.getSkills();
             knacks = tempCharacter.getKnacks();
         }
         //Set Brawn
@@ -359,6 +382,76 @@ public class characterSummaryController implements Initializable {
     }
 
     public void onSaveButton(ActionEvent actionEvent) {
+        int characterId;
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please confirm you are done viewing character data.");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+                //Save Character to Database and go to landing page
+                DBPlayerCharacter.addCharacter(name, playerName, gender, heroPoints, nation_id, brawn, finesse, wits, resolve, panache);
+                if (DBPlayerCharacter.lastPcId() == 0) {
+                    characterId = 1;
+                } else {
+                    characterId = DBPlayerCharacter.lastPcId();
+                }
+                if (advantages.size() > 0) {
+                    for (Advantages a : advantages
+                    ) {
+                        int advId = a.getId();
+                        DBChar_Advantages.addCharAdvantages(characterId, advId);
+                    }
+                }
+                if(skills.size() > 0) {
+                    for (Skill s: skills
+                         ) {
+                        int skillId = s.getId();
+                        DBChar_Skills.addCharSkills(characterId, skillId);
+                    }
+                }
+                if(knacks.size() > 0) {
+                    for (Knack k: knacks
+                         ) {
+                        int knackId = k.getId();
+                        int rank = k.getKnackLevel();
+                        DBChar_Knacks.addCharKnacks(characterId, knackId, rank);
+                    }
+                }
+
+                //now use "SELECT last_insert_rowid()"; to get id of PC
+                if (tempCharacter.isSorcerer()) {
+                    //if character has more than one sorcery bloodline
+                    if (tempSorcerer.getBlood() == 3) {
+
+                    } else {
+                        //character has only one sorcery bloodline
+
+                    }
+
+                }
+                if (tempCharacter.isSwordsman()) {
+
+                }
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/com/example/seventhseacharactergenerator/landingPage-view.fxml"));
+                    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            alert.showAndWait();
+        } else if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+            //Close window and do not proceed
+        } else {
+
+        }
+
     }
 
 }

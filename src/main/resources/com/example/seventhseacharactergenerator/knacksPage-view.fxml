@@ -32,7 +32,7 @@
       <Spinner fx:id="rankValue" layoutX="534.0" layoutY="389.0">
          <valueFactory>
             <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
-               <min>0</min>
+               <min>1</min>
                <max>3</max>
                <wrapAround>true</wrapAround>
             </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>>

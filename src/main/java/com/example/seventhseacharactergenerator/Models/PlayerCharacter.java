@@ -2,6 +2,9 @@ package com.example.seventhseacharactergenerator.Models;
 
 import javafx.collections.ObservableList;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 public class PlayerCharacter {
     private int id;
     private boolean isSorcerer;
@@ -11,6 +14,8 @@ public class PlayerCharacter {
     private int heroPoints;
     private String gender;
     private Nation nation;
+    private String nationName;
+    private LocalDateTime createDate;
     private int brawn;
     private int finesse;
     private int wits;
@@ -35,6 +40,15 @@ public class PlayerCharacter {
         this.wits = wits;
         this.resolve = resolve;
         this.panache = panache;
+    }
+
+    public PlayerCharacter(String name, String player, String gender, String nationName, int heroPoints, LocalDateTime createDate) {
+        this.name= name;
+        this.player = player;
+        this.gender = gender;
+        this.nationName= nationName;
+        this.heroPoints= heroPoints;
+        this.createDate = createDate;
     }
 
     public int getId() {
@@ -171,6 +185,22 @@ public class PlayerCharacter {
 
     public void setSwordsman(boolean swordsman) {
         isSwordsman = swordsman;
+    }
+
+    public String getNationName() {
+        return nationName;
+    }
+
+    public void setNationName(String nationName) {
+        this.nationName = nationName;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
     }
 
     @Override

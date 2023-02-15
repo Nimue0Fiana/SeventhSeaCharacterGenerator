@@ -47,12 +47,6 @@ public class skillsController implements Initializable {
     @FXML // fx:id="availKnacksCol"
     private TableColumn<?, ?> availKnacksCol; // Value injected by FXMLLoader
 
-    @FXML // fx:id="availableGoButton"
-    private Button availableGoButton; // Value injected by FXMLLoader
-
-    @FXML // fx:id="availableSearch"
-    private TextField availableSearch; // Value injected by FXMLLoader
-
     @FXML // fx:id="availableSkillNameCol"
     private TableColumn<?, ?> availableSkillNameCol; // Value injected by FXMLLoader
 
@@ -61,12 +55,6 @@ public class skillsController implements Initializable {
 
     @FXML // fx:id="chosenAttachedKnackCol"
     private TableColumn<?, ?> chosenAttachedKnackCol; // Value injected by FXMLLoader
-
-    @FXML // fx:id="chosenGoButton"
-    private Button chosenGoButton; // Value injected by FXMLLoader
-
-    @FXML // fx:id="chosenSearch"
-    private TextField chosenSearch; // Value injected by FXMLLoader
 
     @FXML // fx:id="chosenSkillCol"
     private TableColumn<?, ?> chosenSkillCol; // Value injected by FXMLLoader
@@ -183,26 +171,6 @@ public class skillsController implements Initializable {
 
             System.out.println(purchasedKnacks.toString());
         }
-    }
-
-    @FXML
-    void onAvailableGoButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onAvailableSearchEnter(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onChosenGoButton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onChosenSearchEnter(ActionEvent event) {
-
     }
 
     @FXML

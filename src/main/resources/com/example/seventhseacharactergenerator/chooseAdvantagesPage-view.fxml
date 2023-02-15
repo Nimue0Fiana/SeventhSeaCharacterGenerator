@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
@@ -29,10 +28,6 @@
             <TableColumn fx:id="chosenAdvantageDescription" prefWidth="158.0" text="Description" />
         </columns>
       </TableView>
-      <TextField fx:id="availableAdvantageSearch" layoutX="245.0" layoutY="80.0" onAction="#onAvailableEnter" />
-      <Button layoutX="396.0" layoutY="80.0" mnemonicParsing="false" onAction="#onAvailableGo" text="Go" />
-      <TextField fx:id="chosenAdvantageSearch" layoutX="671.0" layoutY="80.0" onAction="#onChosenEnter" />
-      <Button layoutX="820.0" layoutY="80.0" mnemonicParsing="false" onAction="#onChosenGo" text="Go" />
       <Circle fill="#ae8600" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
       <Button fx:id="addSelected" layoutX="466.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAddSelected" text="&gt;&gt;&gt;" />
       <Button layoutX="931.0" layoutY="639.0" mnemonicParsing="false" onAction="#onContinueButton" text="Continue" />
