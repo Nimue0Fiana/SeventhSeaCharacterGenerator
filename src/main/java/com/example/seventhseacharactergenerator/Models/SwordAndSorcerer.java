@@ -2,6 +2,7 @@ package com.example.seventhseacharactergenerator.Models;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 public class SwordAndSorcerer extends PlayerCharacter {
     private int sorceryPoints1;
     private int sorceryPoints2;
@@ -17,9 +18,33 @@ public class SwordAndSorcerer extends PlayerCharacter {
     private ObservableList<SwordsmanDegree> swordsmanDegrees = FXCollections.observableArrayList();
     private ObservableList<SwordsmanKnack> swordsmanKnacks = FXCollections.observableArrayList();
 
+    /**
+     *
+     */
     public SwordAndSorcerer() {
 
     }
+
+    /**
+     * @param id
+     * @param name
+     * @param player
+     * @param heroPoints
+     * @param gender
+     * @param nation
+     * @param brawn
+     * @param finesse
+     * @param wits
+     * @param resolve
+     * @param panache
+     * @param sorceryPoints1
+     * @param blood
+     * @param sorcery
+     * @param sorceryKnacks1
+     * @param sorceryDegrees
+     * @param swordsmanSchools
+     * @param swordsmanDegrees
+     */
     //Initialize full-blooded or half-blooded sorcerer swordsman
     public SwordAndSorcerer(int id, String name, String player, int heroPoints, String gender, Nation nation, int brawn,
                             int finesse, int wits, int resolve, int panache, int sorceryPoints1,
@@ -36,6 +61,30 @@ public class SwordAndSorcerer extends PlayerCharacter {
         this.swordsmanDegrees = swordsmanDegrees;
 
     }
+
+    /**
+     * @param id
+     * @param name
+     * @param player
+     * @param heroPoints
+     * @param gender
+     * @param nation
+     * @param brawn
+     * @param finesse
+     * @param wits
+     * @param resolve
+     * @param panache
+     * @param sorceryPoints1
+     * @param sorceryPoints2
+     * @param blood
+     * @param sorcery
+     * @param sorceries
+     * @param sorceryKnacks1
+     * @param sorceryKnacks2
+     * @param sorceryDegrees
+     * @param swordsmanSchools
+     * @param swordsmanDegrees
+     */
     //Initialize double-blooded sorcerer swordsman
     public SwordAndSorcerer(int id, String name, String player, int heroPoints, String gender, Nation nation, int brawn,
                             int finesse, int wits, int resolve, int panache, int sorceryPoints1, int sorceryPoints2,
@@ -55,9 +104,14 @@ public class SwordAndSorcerer extends PlayerCharacter {
         this.swordsmanSchools = swordsmanSchools;
         this.swordsmanDegrees = swordsmanDegrees;
     }
+
+    /**
+     * @param pc
+     * @return
+     */
     //full or half-blooded sorcerer to Swordsman-Sorcerer
     public SwordAndSorcerer transformSorcererToSwordAndSorcerer(Sorcerer pc) {
-        SwordAndSorcerer swordAndSorcerer= new SwordAndSorcerer();
+        SwordAndSorcerer swordAndSorcerer = new SwordAndSorcerer();
         swordAndSorcerer.setId(pc.getId());
         swordAndSorcerer.setName(pc.getName());
         swordAndSorcerer.setPlayer(pc.getPlayer());
@@ -78,9 +132,14 @@ public class SwordAndSorcerer extends PlayerCharacter {
 
         return swordAndSorcerer;
     }
+
+    /**
+     * @param pc
+     * @return
+     */
     //transformation method for double-blooded sorcerer to swordsman sorcerer
     public SwordAndSorcerer transformDoubleSorcererToSwordSorcerer(Sorcerer pc) {
-        SwordAndSorcerer swordAndSorcerer= new SwordAndSorcerer();
+        SwordAndSorcerer swordAndSorcerer = new SwordAndSorcerer();
         swordAndSorcerer.setId(pc.getId());
         swordAndSorcerer.setName(pc.getName());
         swordAndSorcerer.setPlayer(pc.getPlayer());
@@ -103,114 +162,208 @@ public class SwordAndSorcerer extends PlayerCharacter {
         return swordAndSorcerer;
     }
 
+    /**
+     * @return
+     */
     public int getSorceryPoints1() {
         return sorceryPoints1;
     }
 
+    /**
+     * @param sorceryPoints1
+     */
     public void setSorceryPoints1(int sorceryPoints1) {
         this.sorceryPoints1 = sorceryPoints1;
     }
 
+    /**
+     * @return
+     */
     public int getSorceryPoints2() {
         return sorceryPoints2;
     }
 
+    /**
+     * @param sorceryPoints2
+     */
     public void setSorceryPoints2(int sorceryPoints2) {
         this.sorceryPoints2 = sorceryPoints2;
     }
 
+    /**
+     * @return
+     */
     public int getBlood() {
         return blood;
     }
 
+    /**
+     * @param blood
+     */
     public void setBlood(int blood) {
         this.blood = blood;
     }
 
+    /**
+     * @return
+     */
     public Sorcery getSorcery() {
         return sorcery;
     }
 
+    /**
+     * @param sorcery
+     */
     public void setSorcery(Sorcery sorcery) {
         this.sorcery = sorcery;
     }
 
+    /**
+     * @return
+     */
     public ObservableList<Sorcery> getSorceries() {
         return sorceries;
     }
 
+    /**
+     * @param sorceries
+     */
     public void setSorceries(ObservableList<Sorcery> sorceries) {
         this.sorceries = sorceries;
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SorceryKnack> getSorceryKnacks1() {
         return sorceryKnacks1;
     }
 
+    /**
+     * @param sorceryKnacks1
+     */
     public void setSorceryKnacks1(ObservableList<SorceryKnack> sorceryKnacks1) {
         this.sorceryKnacks1 = sorceryKnacks1;
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SorceryKnack> getSorceryKnacks2() {
         return sorceryKnacks2;
     }
 
+    /**
+     * @param sorceryKnacks2
+     */
     public void setSorceryKnacks2(ObservableList<SorceryKnack> sorceryKnacks2) {
         this.sorceryKnacks2 = sorceryKnacks2;
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SorceryDegree> getSorceryDegrees() {
         return sorceryDegrees;
     }
 
+    /**
+     * @param sorceryDegrees
+     */
     public void setSorceryDegrees(ObservableList<SorceryDegree> sorceryDegrees) {
         this.sorceryDegrees = sorceryDegrees;
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SwordsmanSchool> getSwordsmanSchools() {
         return swordsmanSchools;
     }
 
+    /**
+     * @param swordsmanSchools
+     */
     public void setSwordsmanSchools(ObservableList<SwordsmanSchool> swordsmanSchools) {
         this.swordsmanSchools = swordsmanSchools;
     }
 
+    /**
+     * @param swordsmanSchool
+     */
     public void addSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
         swordsmanSchools.add(swordsmanSchool);
     }
+
+    /**
+     * @param swordsmanSchool
+     * @return
+     */
     public boolean removeSwordsmanSchool(SwordsmanSchool swordsmanSchool) {
         return this.swordsmanSchools.remove(swordsmanSchool);
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SwordsmanDegree> getSwordsmanDegrees() {
         return swordsmanDegrees;
     }
 
+    /**
+     * @param swordsmanDegrees
+     */
     public void setSwordsmanDegrees(ObservableList<SwordsmanDegree> swordsmanDegrees) {
         this.swordsmanDegrees = swordsmanDegrees;
     }
 
+    /**
+     * @param swordsmanDegree
+     */
     public void addSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
         swordsmanDegrees.add(swordsmanDegree);
     }
+
+    /**
+     * @param swordsmanDegree
+     * @return
+     */
     public boolean removeSwordsmanDegree(SwordsmanDegree swordsmanDegree) {
         return this.swordsmanDegrees.remove(swordsmanDegree);
     }
 
+    /**
+     * @param swordsmanKnacks
+     */
     public void setSwordsmanKnacks(ObservableList<SwordsmanKnack> swordsmanKnacks) {
         this.swordsmanKnacks = swordsmanKnacks;
     }
+
+    /**
+     * @param swordsmanKnack
+     * @return
+     */
     public boolean removeSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
         return this.swordsmanKnacks.remove(swordsmanKnack);
     }
+
+    /**
+     * @param swordsmanKnack
+     */
     public void addSwordsmanKnack(SwordsmanKnack swordsmanKnack) {
         swordsmanKnacks.add(swordsmanKnack);
     }
 
+    /**
+     * @return
+     */
     public ObservableList<SwordsmanKnack> getSwordsmanKnacks() {
         return swordsmanKnacks;
     }
 
+    /**
+     * @return
+     */
     @Override
     public String toString() {
         return "SwordAndSorcerer{" +
