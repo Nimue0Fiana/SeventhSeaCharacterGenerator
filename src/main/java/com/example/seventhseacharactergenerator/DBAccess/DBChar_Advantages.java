@@ -7,7 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBChar_Advantages {
-
+    /**
+     * @param lastPcId
+     * @param advantageId
+     * @return
+     */
     public static int addCharAdvantages(int lastPcId, int advantageId) {
         int rowsAffected = 0;
         try {
@@ -15,8 +19,8 @@ public class DBChar_Advantages {
                     "VALUES (?, ?)";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
 
-                ps.setInt(1, lastPcId);
-                ps.setInt(2, advantageId);
+            ps.setInt(1, lastPcId);
+            ps.setInt(2, advantageId);
 
             rowsAffected = ps.executeUpdate();
         } catch (SQLException e) {

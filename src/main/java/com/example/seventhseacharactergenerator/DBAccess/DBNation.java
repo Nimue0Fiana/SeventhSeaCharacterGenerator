@@ -11,10 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBNation {
-
+    /**
+     * @return
+     */
     public static ObservableList<Nation> getAllNations() {
         ObservableList<Nation> nationsList = FXCollections.observableArrayList();
-        try{
+        try {
             String sql = "SELECT N.id, N.name, N.favored_trait, N.description " +
                     "FROM nations N";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
@@ -34,6 +36,10 @@ public class DBNation {
         return nationsList;
     }
 
+    /**
+     * @param name
+     * @return
+     */
     public static String getNationDescByName(String name) {
         String description;
         try {
@@ -42,14 +48,18 @@ public class DBNation {
                     "WHERE N.name = ?";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ps.setString(1, name);
-             ResultSet rs = ps.executeQuery();
-             description = rs.getString("description");
+            ResultSet rs = ps.executeQuery();
+            description = rs.getString("description");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return description;
     }
 
+    /**
+     * @param name
+     * @return
+     */
     public static Nation getNationByName(String name) {
         Nation requestedNation = null;
         int sorcery_id = 0;
@@ -62,7 +72,7 @@ public class DBNation {
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String nationName = rs.getString("name");
                 String favored_trait = rs.getString("favored_trait");
@@ -82,7 +92,7 @@ public class DBNation {
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String sorceryName = rs.getString("name");
                 String description = rs.getString("description");
@@ -90,13 +100,17 @@ public class DBNation {
 
                 requestedNation.setSorcery(sorcery);
             }
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return requestedNation;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static Nation getNationById(int id) {
         Nation requestedNation = null;
         try {
@@ -104,10 +118,10 @@ public class DBNation {
                     "FROM nations N " +
                     "WHERE N.id = ?";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setInt(1 , id);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
-            while(rs.next()) {
+            while (rs.next()) {
                 int nationId = rs.getInt("id");
                 String nationName = rs.getString("name");
                 String favored_trait = rs.getString("favored_trait");

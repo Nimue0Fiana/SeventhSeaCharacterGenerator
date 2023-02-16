@@ -8,7 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBSwordsmanDegree {
-
+    /**
+     * @param schoolId
+     * @return
+     */
     public static SwordsmanDegree getSwordsmanDegreeBySchoolId(int schoolId) {
         SwordsmanDegree requestedDegree = null;
         try {

@@ -11,7 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBSwordsmanKnack {
-
+    /**
+     * @param searchSchool_id
+     * @return
+     */
     public static ObservableList<SwordsmanKnack> getInitKnacksForSwordsman(int searchSchool_id) {
         ObservableList<SwordsmanKnack> knacksForSwordsman = FXCollections.observableArrayList();
         try {
@@ -20,7 +23,7 @@ public class DBSwordsmanKnack {
                     "WHERE K.school_id = ?";
 
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
-            ps.setString(1,String.valueOf(searchSchool_id));
+            ps.setString(1, String.valueOf(searchSchool_id));
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -39,3 +42,4 @@ public class DBSwordsmanKnack {
         return knacksForSwordsman;
     }
 }
+

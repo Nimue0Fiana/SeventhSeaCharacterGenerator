@@ -11,6 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBSkill {
+    /**
+     * @return
+     */
     public static ObservableList<Skill> getAllSkills() {
         ObservableList<Skill> skills = FXCollections.observableArrayList();
         try {
@@ -31,6 +34,11 @@ public class DBSkill {
         }
         return skills;
     }
+
+    /**
+     * @param q
+     * @return
+     */
 //https://stackoverflow.com/questions/8247970/using-like-wildcard-in-prepared-statement
     public static ObservableList<Skill> lookupSkill(String q) {
         ObservableList<Skill> skills = FXCollections.observableArrayList();
@@ -56,6 +64,10 @@ public class DBSkill {
 
     }
 
+    /**
+     * @param skillId
+     * @return
+     */
     public static Skill lookupSkillById(int skillId) {
         Skill searchedSkill = null;
         try {

@@ -15,7 +15,9 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 public class DBPlayerCharacter {
-    //TODO: retrieve timestamp in local time
+    /**
+     * @return
+     */
     public static ObservableList<PlayerCharacter> getAllCharacters() {
         ObservableList<PlayerCharacter> characterList = FXCollections.observableArrayList();
         try {
@@ -44,6 +46,19 @@ public class DBPlayerCharacter {
         return characterList;
     }
 
+    /**
+     * @param name
+     * @param player
+     * @param gender
+     * @param heroPoints
+     * @param nation_id
+     * @param brawn
+     * @param finesse
+     * @param wits
+     * @param resolve
+     * @param panache
+     * @return
+     */
     public static int addCharacter(String name, String player, String gender, int heroPoints, int nation_id, int brawn, int finesse, int wits, int resolve, int panache) {
         int rowsAffected = 0;
         try {
@@ -68,6 +83,10 @@ public class DBPlayerCharacter {
         return rowsAffected;
     }
 
+    /**
+     * @param characterId
+     * @return
+     */
     public static PlayerCharacter getSimpleCharacterById(int characterId) {
         PlayerCharacter character = null;
         try {
@@ -96,7 +115,7 @@ public class DBPlayerCharacter {
                 int resolve = rs.getInt("resolve");
                 int panache = rs.getInt("panache");
 
-                Nation char_nation= new Nation(nation_id, nation_name, favored_trait, description);
+                Nation char_nation = new Nation(nation_id, nation_name, favored_trait, description);
                 character = new PlayerCharacter(id, name, player, heroPoints, gender, char_nation, brawn,
                         finesse, wits, resolve, panache);
             }
@@ -106,7 +125,19 @@ public class DBPlayerCharacter {
         return character;
     }
 
-    public static int updatePersonalInfo( String name, String playerName, int heroPoints, int brawn, int finesse, int wits, int resolve, int panache, int id) {
+    /**
+     * @param name
+     * @param playerName
+     * @param heroPoints
+     * @param brawn
+     * @param finesse
+     * @param wits
+     * @param resolve
+     * @param panache
+     * @param id
+     * @return
+     */
+    public static int updatePersonalInfo(String name, String playerName, int heroPoints, int brawn, int finesse, int wits, int resolve, int panache, int id) {
         int rowsAffected = 0;
         try {
             String sql = "UPDATE characters " +
@@ -130,6 +161,10 @@ public class DBPlayerCharacter {
         return rowsAffected;
     }
 
+    /**
+     * @param characterId
+     * @return
+     */
     public static int deleteCharacterById(int characterId) {
         int rowsAffected = 0;
         try {
@@ -138,12 +173,15 @@ public class DBPlayerCharacter {
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
             ps.setInt(1, characterId);
             rowsAffected = ps.executeUpdate();
-            } catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return rowsAffected;
     }
 
+    /**
+     * @return
+     */
     public static int lastPcId() {
         int lastCreatedPcId = 0;
         try {

@@ -11,6 +11,7 @@ public abstract class JDBC {
     //private static final String location = "C:\\Users\\Audrey\\IdeaProjects\\SeventhSeaCharacterGenerator\\src\\databases\\";
     private static final String databaseName = "seventhSeaCharacterGen.db";
     private static final String connectionString = protocol + vendor + databaseName;
+
     /**
      * Opens connection with database, and prints success message to console.
      */

@@ -6,7 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBChar_Sword_Knacks {
-
+    /**
+     * @param lastPcId
+     * @param swordKnackId
+     * @param rank
+     * @return
+     */
     public static int addCharSwordsmanKnacks(int lastPcId, int swordKnackId, int rank) {
         int rowsAffected = 0;
         try {

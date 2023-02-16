@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBAdvantage {
-
+    /**
+     * @return
+     */
     public static ObservableList<Advantages> getAllAdvantages() {
         ObservableList<Advantages> advantages = FXCollections.observableArrayList();
         try {

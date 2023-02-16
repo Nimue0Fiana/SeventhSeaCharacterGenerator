@@ -11,6 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBKnack {
+    /**
+     * @param skillId
+     * @return
+     */
     public static String allKnacksForSkill(int skillId) {
         String knackList = null;
         try {
@@ -31,6 +35,10 @@ public class DBKnack {
         return knackList;
     }
 
+    /**
+     * @param skillId
+     * @return
+     */
     public static ObservableList knackListForSkill(int skillId) {
         ObservableList<Knack> associatedKnacks = FXCollections.observableArrayList();
         try {

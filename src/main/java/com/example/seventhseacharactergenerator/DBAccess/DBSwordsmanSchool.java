@@ -11,6 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBSwordsmanSchool {
+    /**
+     * @param id
+     * @return
+     */
     public static String getSwordSchoolDescById(int id) {
         String description;
         try {
@@ -27,6 +31,10 @@ public class DBSwordsmanSchool {
         return description;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static String getSwordSchoolNameById(int id) {
         String name;
         try {
@@ -43,6 +51,10 @@ public class DBSwordsmanSchool {
         return name;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static ObservableList<SwordsmanSchool> getNonNativeSwordSchool(int id) {
         ObservableList<SwordsmanSchool> otherSwordSchools = FXCollections.observableArrayList();
         try {
@@ -77,6 +89,10 @@ public class DBSwordsmanSchool {
         return otherSwordSchools;
     }
 
+    /**
+     * @param schoolName
+     * @return
+     */
     public static String getSchoolDescByName(String schoolName) {
         String description = null;
         try {
@@ -94,6 +110,10 @@ public class DBSwordsmanSchool {
         return description;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static SwordsmanSchool getSwordSchoolById(int id) {
         SwordsmanSchool requestedSchool = null;
         Nation nation;

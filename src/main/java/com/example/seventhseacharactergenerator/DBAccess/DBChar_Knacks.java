@@ -7,6 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBChar_Knacks {
+    /**
+     * @param lastPcId
+     * @param knackId
+     * @param rank
+     * @return
+     */
     public static int addCharKnacks(int lastPcId, int knackId, int rank) {
         int rowsAffected = 0;
         try {
@@ -14,9 +20,9 @@ public class DBChar_Knacks {
                     "VALUES (?, ?, ?)";
             PreparedStatement ps = JDBC.getConnection().prepareStatement(sql);
 
-                ps.setInt(1, lastPcId);
-                ps.setInt(2, knackId);
-                ps.setInt(3, rank);
+            ps.setInt(1, lastPcId);
+            ps.setInt(2, knackId);
+            ps.setInt(3, rank);
 
             rowsAffected = ps.executeUpdate();
         } catch (SQLException e) {

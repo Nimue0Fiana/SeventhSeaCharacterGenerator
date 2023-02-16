@@ -8,6 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBSorcery {
+    /**
+     * @param id
+     * @return
+     */
     public static Sorcery getSorceryById(int id) {
         Sorcery sorcery = null;
         try {
@@ -29,6 +33,10 @@ public class DBSorcery {
         return sorcery;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static Sorcery getSorceryByNationId(int id) {
         Sorcery sorcery = null;
         try {

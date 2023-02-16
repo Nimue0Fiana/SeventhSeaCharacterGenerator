@@ -6,7 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBChar_Sorcery_Degree {
-
+    /**
+     * @param lastPcId
+     * @param sorcery_degree_id
+     * @return
+     */
     public static int addCharSorceryDegree(int lastPcId, int sorcery_degree_id) {
         int rowsAffected = 0;
         try {
