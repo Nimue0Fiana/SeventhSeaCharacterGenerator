@@ -8,7 +8,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.io.IOException;
+
 //TODO:May later increase cost of "advanced" knacks - outside scope of current application
 //TODO:increase favored trait by 1 in initialize method of trait page - outside scope of current application
 //TODO:if gender is male and Vodacce, present choice to take half magic for full cost - different page - outside scope of current application

@@ -5,35 +5,43 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSorceryNationController">
-   <children>
-      <Label layoutX="146.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@spike.gif" />
-         </image>
-      </ImageView>
-      <Button fx:id="avalon" layoutX="104.0" layoutY="254.0" mnemonicParsing="false" onAction="#onAvalon" prefHeight="96.0" prefWidth="104.0" text="Avalon">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="nation2Description" layoutX="194.0" layoutY="105.0" prefHeight="55.0" prefWidth="295.0" text="Label" visible="false" wrapText="true" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSorceryNationController">
+    <children>
+        <Label layoutX="146.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your second nation">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@spike.gif"/>
+            </image>
+        </ImageView>
+        <Button fx:id="avalon" layoutX="104.0" layoutY="254.0" mnemonicParsing="false" onAction="#onAvalon"
+                prefHeight="96.0" prefWidth="104.0" text="Avalon">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Label fx:id="nation2Description" layoutX="194.0" layoutY="105.0" prefHeight="55.0" prefWidth="295.0"
+               text="Label" visible="false" wrapText="true"/>
 
-      <Button fx:id="vodacce" layoutX="248.0" layoutY="254.0" mnemonicParsing="false" onAction="#onVodacce" prefHeight="96.0" prefWidth="104.0" text="Vodacce">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="montaigne" layoutX="385.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMontaigne" prefHeight="96.0" prefWidth="104.0" text="Montaigne">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClick" text="Continue" />
-   </children>
+        <Button fx:id="vodacce" layoutX="248.0" layoutY="254.0" mnemonicParsing="false" onAction="#onVodacce"
+                prefHeight="96.0" prefWidth="104.0" text="Vodacce">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="montaigne" layoutX="385.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMontaigne"
+                prefHeight="96.0" prefWidth="104.0" text="Montaigne">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClick"
+                text="Continue"/>
+    </children>
 </AnchorPane>

@@ -12,52 +12,62 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.personalInfoController">
-   <children>
-      <Label layoutX="264.0" layoutY="235.0" text="Gender">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <ImageView fitHeight="236.0" fitWidth="209.0" layoutX="45.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@7th_sea_gm_cover_crop.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="continueButton" layoutX="633.0" layoutY="394.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <VBox layoutX="264.0" layoutY="91.0" prefHeight="129.0" prefWidth="149.0" spacing="10.0">
-         <children>
-            <Label text="Character Name">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="characterName" />
-            <Label text="Played By">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="playerName" />
-         </children>
-      </VBox>
-      <HBox layoutX="258.0" layoutY="252.0" prefHeight="75.0" prefWidth="440.0" spacing="10.0">
-         <children>
-            <RadioButton fx:id="genderMale" mnemonicParsing="false" prefHeight="20.0" prefWidth="83.0" text="Male"><toggleGroup>
-            <ToggleGroup fx:id="tgroup" />
-            </toggleGroup></RadioButton>
-            <RadioButton fx:id="genderFemale" mnemonicParsing="false" prefHeight="14.0" prefWidth="83.0" text="Female" toggleGroup="$tgroup" />
-            <VBox prefHeight="75.0" prefWidth="151.0" spacing="10.0">
-               <children>
-                  <RadioButton fx:id="other" mnemonicParsing="false" prefHeight="9.0" prefWidth="83.0" text="Other" toggleGroup="$tgroup" />
-                  <TextField fx:id="genderOther" prefHeight="25.0" prefWidth="115.0" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <Label fx:id="errorMessage" layoutX="258.0" layoutY="356.0" text="Label" textFill="RED" visible="false" wrapText="true">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0"
+            prefWidth="715.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.personalInfoController">
+    <children>
+        <Label layoutX="264.0" layoutY="235.0" text="Gender">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="236.0" fitWidth="209.0" layoutX="45.0" layoutY="91.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@7th_sea_gm_cover_crop.png"/>
+            </image>
+        </ImageView>
+        <Button fx:id="continueButton" layoutX="633.0" layoutY="394.0" mnemonicParsing="false" onAction="#onContinue"
+                text="Continue"/>
+        <VBox layoutX="264.0" layoutY="91.0" prefHeight="129.0" prefWidth="149.0" spacing="10.0">
+            <children>
+                <Label text="Character Name">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="characterName"/>
+                <Label text="Played By">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="playerName"/>
+            </children>
+        </VBox>
+        <HBox layoutX="258.0" layoutY="252.0" prefHeight="75.0" prefWidth="440.0" spacing="10.0">
+            <children>
+                <RadioButton fx:id="genderMale" mnemonicParsing="false" prefHeight="20.0" prefWidth="83.0" text="Male">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="tgroup"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="genderFemale" mnemonicParsing="false" prefHeight="14.0" prefWidth="83.0"
+                             text="Female" toggleGroup="$tgroup"/>
+                <VBox prefHeight="75.0" prefWidth="151.0" spacing="10.0">
+                    <children>
+                        <RadioButton fx:id="other" mnemonicParsing="false" prefHeight="9.0" prefWidth="83.0"
+                                     text="Other" toggleGroup="$tgroup"/>
+                        <TextField fx:id="genderOther" prefHeight="25.0" prefWidth="115.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Label fx:id="errorMessage" layoutX="258.0" layoutY="356.0" text="Label" textFill="RED" visible="false"
+               wrapText="true">
+            <font>
+                <Font name="System Bold Italic" size="12.0"/>
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

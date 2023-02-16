@@ -6,50 +6,61 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryController">
-   <children>
-      <Label layoutX="155.0" layoutY="50.0" prefHeight="55.0" prefWidth="313.0" text="Do you want sorcery?" textFill="#0025e1">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <Circle fill="#ae8600" layoutX="545.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="heroPointsTotal" layoutX="517.0" layoutY="31.0" text="100" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@spike.gif" />
-         </image>
-      </ImageView>
-      <Button fx:id="continueButton" layoutX="518.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="sorceryChoiceDescription" layoutX="164.0" layoutY="124.0" prefHeight="55.0" prefWidth="313.0" text="Label" visible="false" wrapText="true" />
-      <Button fx:id="twiceBlooded" layoutX="328.0" layoutY="244.0" mnemonicParsing="false" onAction="#onTwiceBlooded" prefHeight="96.0" prefWidth="104.0" text="Yes - Twice Blooded" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="halfBlooded" layoutX="192.0" layoutY="244.0" mnemonicParsing="false" onAction="#onHalfBlooded" prefHeight="96.0" prefWidth="104.0" text="Yes - Half Blooded" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="fullBlooded" layoutX="60.0" layoutY="244.0" mnemonicParsing="false" onAction="#onFullBlooded" prefHeight="96.0" prefWidth="104.0" text="Yes - Full Blooded" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="noSorcery" layoutX="458.0" layoutY="244.0" mnemonicParsing="false" onAction="#onNoSorcery" prefHeight="96.0" prefWidth="104.0" text="No">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="costLabel" layoutX="155.0" layoutY="105.0" prefHeight="16.0" prefWidth="150.0" text="test" visible="false" wrapText="true">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSorceryController">
+    <children>
+        <Label layoutX="155.0" layoutY="50.0" prefHeight="55.0" prefWidth="313.0" text="Do you want sorcery?"
+               textFill="#0025e1">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <Circle fill="#ae8600" layoutX="545.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Label fx:id="heroPointsTotal" layoutX="517.0" layoutY="31.0" text="100" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@spike.gif"/>
+            </image>
+        </ImageView>
+        <Button fx:id="continueButton" layoutX="518.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue"
+                text="Continue"/>
+        <Label fx:id="sorceryChoiceDescription" layoutX="164.0" layoutY="124.0" prefHeight="55.0" prefWidth="313.0"
+               text="Label" visible="false" wrapText="true"/>
+        <Button fx:id="twiceBlooded" layoutX="328.0" layoutY="244.0" mnemonicParsing="false" onAction="#onTwiceBlooded"
+                prefHeight="96.0" prefWidth="104.0" text="Yes - Twice Blooded" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="halfBlooded" layoutX="192.0" layoutY="244.0" mnemonicParsing="false" onAction="#onHalfBlooded"
+                prefHeight="96.0" prefWidth="104.0" text="Yes - Half Blooded" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="fullBlooded" layoutX="60.0" layoutY="244.0" mnemonicParsing="false" onAction="#onFullBlooded"
+                prefHeight="96.0" prefWidth="104.0" text="Yes - Full Blooded" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="noSorcery" layoutX="458.0" layoutY="244.0" mnemonicParsing="false" onAction="#onNoSorcery"
+                prefHeight="96.0" prefWidth="104.0" text="No">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Label fx:id="costLabel" layoutX="155.0" layoutY="105.0" prefHeight="16.0" prefWidth="150.0" text="test"
+               visible="false" wrapText="true">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

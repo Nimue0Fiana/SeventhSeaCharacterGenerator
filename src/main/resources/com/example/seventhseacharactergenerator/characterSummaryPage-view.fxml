@@ -13,245 +13,250 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="918.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.characterSummaryController">
-   <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@swordBadge.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="saveButton" layoutX="999.0" layoutY="879.0" mnemonicParsing="false" onAction="#onSaveButton" text="Save" />
-      <HBox layoutX="224.0" layoutY="68.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <VBox prefHeight="99.0" prefWidth="65.0">
-               <children>
-                  <Label text="Brawn" />
-                  <Label text="Finesse" />
-                  <Label text="Wits" />
-                  <Label text="Resolve" />
-                  <Label text="Panache" />
-               </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="17.0" prefWidth="100.0">
-                     <children>
-                        <Circle fx:id="brawn1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="brawn2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="brawn3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="100.0">
-                     <children>
-                        <Circle fx:id="finesse1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="finesse2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="finesse3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="wits1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="wits2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="wits3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="resolve1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="resolve2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="resolve3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="panache1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="panache2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="panache3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <Label layoutX="224.0" layoutY="42.0" text="Traits">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="characterName" layoutX="472.0" layoutY="52.0" text="Name: " />
-      <Label fx:id="playerNameLabel" layoutX="472.0" layoutY="68.0" text="Player: " />
-      <Label fx:id="nationLabel" layoutX="472.0" layoutY="84.0" text="Nationality: " />
-      <HBox layoutX="14.0" layoutY="194.0" prefHeight="261.0" prefWidth="1037.0" spacing="10.0">
-         <children>
-            <VBox prefHeight="261.0" prefWidth="184.0" spacing="10.0">
-               <children>
-                  <Label text="Advantages">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="advantageTable" prefHeight="200.0" prefWidth="217.0">
-                    <columns>
-                      <TableColumn fx:id="advantageNameCol" prefWidth="183.0" text="Advantage" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <VBox prefHeight="261.0" prefWidth="426.0" spacing="10.0">
-               <children>
-                  <Label text="Sorcery">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="sorceryTable" prefHeight="200.0" prefWidth="569.0">
-                    <columns>
-                      <TableColumn fx:id="sorceryKnackNameCol" prefWidth="106.0" text="Knack Name" />
-                        <TableColumn fx:id="sorceryKnackDescCol" prefWidth="281.0" text="Description" />
-                      <TableColumn fx:id="sorKnackRankCol" prefWidth="38.0" text="Rank" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <VBox prefHeight="261.0" prefWidth="398.0" spacing="10.0">
-               <children>
-                  <Label text="Swordsman School">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="swordsmanSchoolTable" prefHeight="200.0" prefWidth="191.0">
-                    <columns>
-                      <TableColumn fx:id="swordSchoolNameCol" prefWidth="354.0" text="Swordsman Knacks" />
-                      <TableColumn fx:id="swordSchoolRankCol" prefWidth="43.0" text="Rank" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox layoutX="14.0" layoutY="447.0" prefHeight="273.0" prefWidth="1037.0" spacing="10.0">
-         <children>
-            <VBox prefHeight="273.0" prefWidth="494.0">
-               <children>
-                  <Label text="Skills">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TableView fx:id="skillsTable" prefHeight="277.0" prefWidth="490.0">
-                    <columns>
-                      <TableColumn fx:id="knackNameCol" prefWidth="75.0" text="Knack" />
-                      <TableColumn fx:id="knackDescCol" prefWidth="373.0" text="Description" />
-                        <TableColumn fx:id="knackRankCol" prefWidth="45.0" text="Rank" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-            <VBox prefHeight="273.0" prefWidth="542.0">
-               <children>
-                  <Label fx:id="descriptionLabel" prefHeight="312.0" prefWidth="671.0" text="Label" visible="false" wrapText="true" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <HBox layoutX="14.0" layoutY="678.0" prefHeight="235.0" prefWidth="971.0">
-         <children>
-            <VBox prefHeight="235.0" prefWidth="491.0" />
-            <VBox prefHeight="258.0" prefWidth="175.0" />
-         </children>
-      </HBox>
-      <Label fx:id="sorceryLabel" layoutX="472.0" layoutY="100.0" text="Sorcery: " />
-      <Label fx:id="swordsmanSchoolLabel" layoutX="472.0" layoutY="117.0" text="Swordsman School: " />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="918.0"
+            prefWidth="1066.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.characterSummaryController">
+    <children>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="25.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@swordBadge.png"/>
+            </image>
+        </ImageView>
+        <Button fx:id="saveButton" layoutX="999.0" layoutY="879.0" mnemonicParsing="false" onAction="#onSaveButton"
+                text="Save"/>
+        <HBox layoutX="224.0" layoutY="68.0" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <VBox prefHeight="99.0" prefWidth="65.0">
+                    <children>
+                        <Label text="Brawn"/>
+                        <Label text="Finesse"/>
+                        <Label text="Wits"/>
+                        <Label text="Resolve"/>
+                        <Label text="Panache"/>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox prefHeight="17.0" prefWidth="100.0">
+                            <children>
+                                <Circle fx:id="brawn1" radius="7.0" stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="brawn2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="brawn3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="100.0">
+                            <children>
+                                <Circle fx:id="finesse1" radius="7.0" stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="finesse2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="finesse3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="wits1" radius="7.0" stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="wits2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="wits3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="resolve1" radius="7.0" stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="resolve2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="resolve3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="panache1" radius="7.0" stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="panache2" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="panache3" fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Label layoutX="224.0" layoutY="42.0" text="Traits">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Label fx:id="characterName" layoutX="472.0" layoutY="52.0" text="Name: "/>
+        <Label fx:id="playerNameLabel" layoutX="472.0" layoutY="68.0" text="Player: "/>
+        <Label fx:id="nationLabel" layoutX="472.0" layoutY="84.0" text="Nationality: "/>
+        <HBox layoutX="14.0" layoutY="194.0" prefHeight="261.0" prefWidth="1037.0" spacing="10.0">
+            <children>
+                <VBox prefHeight="261.0" prefWidth="184.0" spacing="10.0">
+                    <children>
+                        <Label text="Advantages">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                        <TableView fx:id="advantageTable" prefHeight="200.0" prefWidth="217.0">
+                            <columns>
+                                <TableColumn fx:id="advantageNameCol" prefWidth="183.0" text="Advantage"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox prefHeight="261.0" prefWidth="426.0" spacing="10.0">
+                    <children>
+                        <Label text="Sorcery">
+                            <font>
+                                <Font name="System Bold" size="13.0"/>
+                            </font>
+                        </Label>
+                        <TableView fx:id="sorceryTable" prefHeight="200.0" prefWidth="569.0">
+                            <columns>
+                                <TableColumn fx:id="sorceryKnackNameCol" prefWidth="106.0" text="Knack Name"/>
+                                <TableColumn fx:id="sorceryKnackDescCol" prefWidth="281.0" text="Description"/>
+                                <TableColumn fx:id="sorKnackRankCol" prefWidth="38.0" text="Rank"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox prefHeight="261.0" prefWidth="398.0" spacing="10.0">
+                    <children>
+                        <Label text="Swordsman School">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                        <TableView fx:id="swordsmanSchoolTable" prefHeight="200.0" prefWidth="191.0">
+                            <columns>
+                                <TableColumn fx:id="swordSchoolNameCol" prefWidth="354.0" text="Swordsman Knacks"/>
+                                <TableColumn fx:id="swordSchoolRankCol" prefWidth="43.0" text="Rank"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="447.0" prefHeight="273.0" prefWidth="1037.0" spacing="10.0">
+            <children>
+                <VBox prefHeight="273.0" prefWidth="494.0">
+                    <children>
+                        <Label text="Skills">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                        </Label>
+                        <TableView fx:id="skillsTable" prefHeight="277.0" prefWidth="490.0">
+                            <columns>
+                                <TableColumn fx:id="knackNameCol" prefWidth="75.0" text="Knack"/>
+                                <TableColumn fx:id="knackDescCol" prefWidth="373.0" text="Description"/>
+                                <TableColumn fx:id="knackRankCol" prefWidth="45.0" text="Rank"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <VBox prefHeight="273.0" prefWidth="542.0">
+                    <children>
+                        <Label fx:id="descriptionLabel" prefHeight="312.0" prefWidth="671.0" text="Label"
+                               visible="false" wrapText="true"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox layoutX="14.0" layoutY="678.0" prefHeight="235.0" prefWidth="971.0">
+            <children>
+                <VBox prefHeight="235.0" prefWidth="491.0"/>
+                <VBox prefHeight="258.0" prefWidth="175.0"/>
+            </children>
+        </HBox>
+        <Label fx:id="sorceryLabel" layoutX="472.0" layoutY="100.0" text="Sorcery: "/>
+        <Label fx:id="swordsmanSchoolLabel" layoutX="472.0" layoutY="117.0" text="Swordsman School: "/>
+    </children>
 </AnchorPane>

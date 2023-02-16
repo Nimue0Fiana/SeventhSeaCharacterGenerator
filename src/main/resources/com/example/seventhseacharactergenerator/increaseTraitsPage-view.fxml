@@ -6,162 +6,183 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
-   <children>
-      <Circle fill="#ae8600" layoutX="453.0" layoutY="72.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="continueButton" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="heroPointsRemaining" alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="48.0" prefHeight="49.0" prefWidth="74.0" text="50" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Label>
-      <HBox fx:id="traitsHBox" layoutX="131.0" layoutY="193.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <VBox prefHeight="99.0" prefWidth="65.0">
-               <children>
-                  <Label text="Brawn" />
-                  <Label text="Finesse" />
-                  <Label text="Wits" />
-                  <Label text="Resolve" />
-                  <Label text="Panache" />
-               </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="17.0" prefWidth="100.0">
-                     <children>
-                        <Circle fx:id="brawnRank1" onMouseClicked="#onBrawnRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="brawnRank2" fill="WHITE" onMouseClicked="#onBrawnRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="brawnRank3" fill="WHITE" onMouseClicked="#onBrawnRank3" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="100.0">
-                     <children>
-                        <Circle fx:id="finesseRank1" onMouseClicked="#onFinesseRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="finesseRank2" fill="WHITE" onMouseClicked="#onFinesseRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="finesseRank3" fill="WHITE" onMouseClicked="#onFinesseRank3" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="witsRank1" onMouseClicked="#onWitsRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="witsRank2" fill="WHITE" onMouseClicked="#onWitsRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="witsRank3" fill="WHITE" onMouseClicked="#onWitsRank3" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="resolveRank1" onMouseClicked="#onResolveRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="resolveRank2" fill="WHITE" onMouseClicked="#onResolveRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="resolveRank3" fill="WHITE" onMouseClicked="#onResolveRank3" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="17.0" prefWidth="79.0">
-                     <children>
-                        <Circle fx:id="panacheRank1" onMouseClicked="#onPanacheRank1" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Circle fx:id="panacheRank2" fill="WHITE" onMouseClicked="#onPanacheRank2" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fx:id="panacheRank3" fill="WHITE" onMouseClicked="#onPanacheRank3" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                        <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
-                           <HBox.margin>
-                              <Insets left="3.0" />
-                           </HBox.margin>
-                        </Circle>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <Label layoutX="81.0" layoutY="31.0" text="Increase your traits">
-         <font>
-            <Font name="Bauhaus 93" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="91.0" layoutY="72.0" prefHeight="108.0" prefWidth="279.0" text="Click on the dots to change your Rank in each trait. All heroes begin with Rank 1 in all traits; It costs 8 Hero Points to increase a trait by one Rank. No one may increase a trait beyond Rank 3 at character creation. No one may start with a Rank of 0." wrapText="true" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0"
+            prefWidth="523.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
+    <children>
+        <Circle fill="#ae8600" layoutX="453.0" layoutY="72.0" radius="41.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Button fx:id="continueButton" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#onContinue"
+                text="Continue"/>
+        <Label fx:id="heroPointsRemaining" alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="48.0"
+               prefHeight="49.0" prefWidth="74.0" text="50" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0"/>
+            </font>
+        </Label>
+        <HBox fx:id="traitsHBox" layoutX="131.0" layoutY="193.0" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <VBox prefHeight="99.0" prefWidth="65.0">
+                    <children>
+                        <Label text="Brawn"/>
+                        <Label text="Finesse"/>
+                        <Label text="Wits"/>
+                        <Label text="Resolve"/>
+                        <Label text="Panache"/>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox prefHeight="17.0" prefWidth="100.0">
+                            <children>
+                                <Circle fx:id="brawnRank1" onMouseClicked="#onBrawnRank1" radius="7.0" stroke="BLACK"
+                                        strokeType="INSIDE"/>
+                                <Circle fx:id="brawnRank2" fill="WHITE" onMouseClicked="#onBrawnRank2" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="brawnRank3" fill="WHITE" onMouseClicked="#onBrawnRank3" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="100.0">
+                            <children>
+                                <Circle fx:id="finesseRank1" onMouseClicked="#onFinesseRank1" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="finesseRank2" fill="WHITE" onMouseClicked="#onFinesseRank2" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="finesseRank3" fill="WHITE" onMouseClicked="#onFinesseRank3" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="witsRank1" onMouseClicked="#onWitsRank1" radius="7.0" stroke="BLACK"
+                                        strokeType="INSIDE"/>
+                                <Circle fx:id="witsRank2" fill="WHITE" onMouseClicked="#onWitsRank2" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="witsRank3" fill="WHITE" onMouseClicked="#onWitsRank3" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="resolveRank1" onMouseClicked="#onResolveRank1" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="resolveRank2" fill="WHITE" onMouseClicked="#onResolveRank2" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="resolveRank3" fill="WHITE" onMouseClicked="#onResolveRank3" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="79.0">
+                            <children>
+                                <Circle fx:id="panacheRank1" onMouseClicked="#onPanacheRank1" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE"/>
+                                <Circle fx:id="panacheRank2" fill="WHITE" onMouseClicked="#onPanacheRank2" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fx:id="panacheRank3" fill="WHITE" onMouseClicked="#onPanacheRank3" radius="7.0"
+                                        stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                                <Circle fill="#7c8083" radius="7.0" stroke="BLACK" strokeType="INSIDE">
+                                    <HBox.margin>
+                                        <Insets left="3.0"/>
+                                    </HBox.margin>
+                                </Circle>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Label layoutX="81.0" layoutY="31.0" text="Increase your traits">
+            <font>
+                <Font name="Bauhaus 93" size="24.0"/>
+            </font>
+        </Label>
+        <Label layoutX="91.0" layoutY="72.0" prefHeight="108.0" prefWidth="279.0"
+               text="Click on the dots to change your Rank in each trait. All heroes begin with Rank 1 in all traits; It costs 8 Hero Points to increase a trait by one Rank. No one may increase a trait beyond Rank 3 at character creation. No one may start with a Rank of 0."
+               wrapText="true"/>
+    </children>
 </AnchorPane>

@@ -8,37 +8,44 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseAdvantagesController">
-   <children>
-      <Label layoutX="124.0" layoutY="15.0" prefHeight="81.0" prefWidth="680.0" text="Pick your advantages" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <TableView fx:id="availableAdvantages" layoutX="124.0" layoutY="110.0" prefHeight="442.0" prefWidth="304.0">
-        <columns>
-          <TableColumn fx:id="availAdvantageName" prefWidth="81.0" text="Name" />
-            <TableColumn fx:id="availAdvantageDesc" prefWidth="186.0" text="Description" />
-            <TableColumn fx:id="availAdvantageCost" prefWidth="36.0" text="Cost" />
-        </columns>
-      </TableView>
-      <TableView fx:id="chosenAdvantages" layoutX="548.0" layoutY="110.0" prefHeight="442.0" prefWidth="304.0">
-        <columns>
-          <TableColumn fx:id="chosenAdvantageName" prefWidth="145.0" text="Name" />
-            <TableColumn fx:id="chosenAdvantageDescription" prefWidth="158.0" text="Description" />
-        </columns>
-      </TableView>
-      <Circle fill="#ae8600" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="addSelected" layoutX="466.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAddSelected" text="&gt;&gt;&gt;" />
-      <Button layoutX="931.0" layoutY="639.0" mnemonicParsing="false" onAction="#onContinueButton" text="Continue" />
-      <Label fx:id="heroPointsTotal" alignment="CENTER" contentDisplay="CENTER" layoutX="911.0" layoutY="31.0" prefHeight="49.0" prefWidth="71.0" text="50" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Label>
-      <Label layoutX="128.0" layoutY="84.0" text="Available Advantages" />
-      <Label layoutX="548.0" layoutY="84.0" text="Chosen Advantages" />
-      <Label fx:id="advantageDescriptionLabel" layoutX="39.0" layoutY="576.0" prefHeight="82.0" prefWidth="846.0" text="Label" visible="false" wrapText="true" />
-      <Button fx:id="removeSelected" layoutX="466.0" layoutY="319.0" mnemonicParsing="false" onAction="#onRemoveSelected" text="&lt;&lt;&lt;" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0"
+            prefWidth="1010.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseAdvantagesController">
+    <children>
+        <Label layoutX="124.0" layoutY="15.0" prefHeight="81.0" prefWidth="680.0" text="Pick your advantages"
+               textAlignment="CENTER" textFill="#ae8600" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="availableAdvantages" layoutX="124.0" layoutY="110.0" prefHeight="442.0" prefWidth="304.0">
+            <columns>
+                <TableColumn fx:id="availAdvantageName" prefWidth="81.0" text="Name"/>
+                <TableColumn fx:id="availAdvantageDesc" prefWidth="186.0" text="Description"/>
+                <TableColumn fx:id="availAdvantageCost" prefWidth="36.0" text="Cost"/>
+            </columns>
+        </TableView>
+        <TableView fx:id="chosenAdvantages" layoutX="548.0" layoutY="110.0" prefHeight="442.0" prefWidth="304.0">
+            <columns>
+                <TableColumn fx:id="chosenAdvantageName" prefWidth="145.0" text="Name"/>
+                <TableColumn fx:id="chosenAdvantageDescription" prefWidth="158.0" text="Description"/>
+            </columns>
+        </TableView>
+        <Circle fill="#ae8600" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Button fx:id="addSelected" layoutX="466.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAddSelected"
+                text="&gt;&gt;&gt;"/>
+        <Button layoutX="931.0" layoutY="639.0" mnemonicParsing="false" onAction="#onContinueButton" text="Continue"/>
+        <Label fx:id="heroPointsTotal" alignment="CENTER" contentDisplay="CENTER" layoutX="911.0" layoutY="31.0"
+               prefHeight="49.0" prefWidth="71.0" text="50" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0"/>
+            </font>
+        </Label>
+        <Label layoutX="128.0" layoutY="84.0" text="Available Advantages"/>
+        <Label layoutX="548.0" layoutY="84.0" text="Chosen Advantages"/>
+        <Label fx:id="advantageDescriptionLabel" layoutX="39.0" layoutY="576.0" prefHeight="82.0" prefWidth="846.0"
+               text="Label" visible="false" wrapText="true"/>
+        <Button fx:id="removeSelected" layoutX="466.0" layoutY="319.0" mnemonicParsing="false"
+                onAction="#onRemoveSelected" text="&lt;&lt;&lt;"/>
+    </children>
 </AnchorPane>

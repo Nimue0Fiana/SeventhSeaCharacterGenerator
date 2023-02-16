@@ -8,40 +8,51 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSwordController">
-   <children>
-      <Circle fill="#ae8600" layoutX="545.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="517.0" layoutY="31.0" prefHeight="49.0" prefWidth="57.0" text="100" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Label>
-      <Label layoutX="124.0" layoutY="24.0" prefHeight="81.0" prefWidth="404.0" text="Do you want to join a swordsman school?" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@swordBadge.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="swordSchoolDescription" layoutX="175.0" layoutY="106.0" prefHeight="140.0" prefWidth="374.0" text="Label" visible="false" wrapText="true" />
-      <Button fx:id="myNation" layoutX="115.0" layoutY="265.0" mnemonicParsing="false" onAction="#onMyNation" prefHeight="96.0" prefWidth="104.0" text="Yes - for my nation" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="otherNation" layoutX="245.0" layoutY="265.0" mnemonicParsing="false" onAction="#onOther" prefHeight="96.0" prefWidth="104.0" text="Yes - for another nation" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="noSwordSchool" layoutX="382.0" layoutY="265.0" mnemonicParsing="false" onAction="#onNoSwordSchool" prefHeight="96.0" prefWidth="104.0" text="No">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.confirmSwordController">
+    <children>
+        <Circle fill="#ae8600" layoutX="545.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="517.0" layoutY="31.0" prefHeight="49.0"
+               prefWidth="57.0" text="100" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0"/>
+            </font>
+        </Label>
+        <Label layoutX="124.0" layoutY="24.0" prefHeight="81.0" prefWidth="404.0"
+               text="Do you want to join a swordsman school?" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@swordBadge.png"/>
+            </image>
+        </ImageView>
+        <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue"
+                text="Continue"/>
+        <Label fx:id="swordSchoolDescription" layoutX="175.0" layoutY="106.0" prefHeight="140.0" prefWidth="374.0"
+               text="Label" visible="false" wrapText="true"/>
+        <Button fx:id="myNation" layoutX="115.0" layoutY="265.0" mnemonicParsing="false" onAction="#onMyNation"
+                prefHeight="96.0" prefWidth="104.0" text="Yes - for my nation" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="otherNation" layoutX="245.0" layoutY="265.0" mnemonicParsing="false" onAction="#onOther"
+                prefHeight="96.0" prefWidth="104.0" text="Yes - for another nation" textAlignment="CENTER"
+                wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="noSwordSchool" layoutX="382.0" layoutY="265.0" mnemonicParsing="false"
+                onAction="#onNoSwordSchool" prefHeight="96.0" prefWidth="104.0" text="No">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

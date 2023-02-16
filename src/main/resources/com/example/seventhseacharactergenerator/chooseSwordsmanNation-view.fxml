@@ -5,29 +5,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSchoolNationController">
-   <children>
-      <Label alignment="CENTER" layoutX="108.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0" text="Choose your school" textAlignment="CENTER">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <Button fx:id="school1" layoutX="130.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool1" prefHeight="96.0" prefWidth="104.0" text="School 1">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="schoolDescription" layoutX="99.0" layoutY="105.0" prefHeight="109.0" prefWidth="390.0" text="Label" visible="false" wrapText="true" />
-      <Button fx:id="school2" layoutX="251.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool2" prefHeight="96.0" prefWidth="104.0" text="School 2">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="school3" layoutX="366.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool3" prefHeight="96.0" prefWidth="104.0" text="School 3">
-         <font>
-            <Font name="Bauhaus 93" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.chooseSchoolNationController">
+    <children>
+        <Label alignment="CENTER" layoutX="108.0" layoutY="50.0" prefHeight="55.0" prefWidth="390.0"
+               text="Choose your school" textAlignment="CENTER">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <Button fx:id="school1" layoutX="130.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool1"
+                prefHeight="96.0" prefWidth="104.0" text="School 1">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Label fx:id="schoolDescription" layoutX="99.0" layoutY="105.0" prefHeight="109.0" prefWidth="390.0"
+               text="Label" visible="false" wrapText="true"/>
+        <Button fx:id="school2" layoutX="251.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool2"
+                prefHeight="96.0" prefWidth="104.0" text="School 2">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="school3" layoutX="366.0" layoutY="265.0" mnemonicParsing="false" onAction="#onSchool3"
+                prefHeight="96.0" prefWidth="104.0" text="School 3">
+            <font>
+                <Font name="Bauhaus 93" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="continueButton" layoutX="521.0" layoutY="361.0" mnemonicParsing="false" onAction="#onContinue"
+                text="Continue"/>
+    </children>
 </AnchorPane>

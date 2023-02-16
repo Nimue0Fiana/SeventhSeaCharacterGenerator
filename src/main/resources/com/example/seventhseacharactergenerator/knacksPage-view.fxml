@@ -5,44 +5,55 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.knacksController">
-   <children>
-      <Label layoutX="180.0" layoutY="15.0" prefHeight="81.0" prefWidth="680.0" text="Increase your knacks" textAlignment="CENTER" textFill="#ae8600" wrapText="true">
-         <font>
-            <Font name="Bauhaus 93" size="31.0" />
-         </font>
-      </Label>
-      <Circle fill="#ae8600" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="updateButton" layoutX="713.0" layoutY="389.0" mnemonicParsing="false" onAction="#onUpdateButton" text="Update" />
-      <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="917.0" layoutY="31.0" prefHeight="49.0" prefWidth="55.0" text="6" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Label>
-      <TableView fx:id="knackTable" layoutX="180.0" layoutY="134.0" prefHeight="474.0" prefWidth="300.0">
-        <columns>
-          <TableColumn fx:id="knackNameCol" prefWidth="242.0" text="Knack" />
-            <TableColumn fx:id="rankCol" prefWidth="57.0" text="Rank" />
-        </columns>
-      </TableView>
-      <Label fx:id="knackName" layoutX="534.0" layoutY="134.0" prefHeight="17.0" prefWidth="200.0" text="Knack Name" visible="false">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Spinner fx:id="rankValue" layoutX="534.0" layoutY="389.0">
-         <valueFactory>
-            <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
-               <min>1</min>
-               <max>3</max>
-               <wrapAround>true</wrapAround>
-            </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>>
-         </valueFactory>
-      </Spinner>
-      <Label layoutX="534.0" layoutY="371.0" text="Rank">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-      <Button fx:id="continueButton" layoutX="931.0" layoutY="639.0" mnemonicParsing="false" onAction="#onContinueButton" text="Continue" />
-      <Label fx:id="knackDescription" layoutX="534.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" text="Label" visible="false" wrapText="true" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0"
+            prefWidth="1010.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.seventhseacharactergenerator.Controllers.knacksController">
+    <children>
+        <Label layoutX="180.0" layoutY="15.0" prefHeight="81.0" prefWidth="680.0" text="Increase your knacks"
+               textAlignment="CENTER" textFill="#ae8600" wrapText="true">
+            <font>
+                <Font name="Bauhaus 93" size="31.0"/>
+            </font>
+        </Label>
+        <Circle fill="#ae8600" layoutX="945.0" layoutY="55.0" radius="41.0" stroke="BLACK" strokeType="INSIDE"/>
+        <Button fx:id="updateButton" layoutX="713.0" layoutY="389.0" mnemonicParsing="false" onAction="#onUpdateButton"
+                text="Update"/>
+        <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="917.0" layoutY="31.0" prefHeight="49.0"
+               prefWidth="55.0" text="6" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="33.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="knackTable" layoutX="180.0" layoutY="134.0" prefHeight="474.0" prefWidth="300.0">
+            <columns>
+                <TableColumn fx:id="knackNameCol" prefWidth="242.0" text="Knack"/>
+                <TableColumn fx:id="rankCol" prefWidth="57.0" text="Rank"/>
+            </columns>
+        </TableView>
+        <Label fx:id="knackName" layoutX="534.0" layoutY="134.0" prefHeight="17.0" prefWidth="200.0" text="Knack Name"
+               visible="false">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Spinner fx:id="rankValue" layoutX="534.0" layoutY="389.0">
+            <valueFactory>
+                <javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                    <min>1</min>
+                    <max>3</max>
+                    <wrapAround>true</wrapAround>
+                </javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory>
+                >
+            </valueFactory>
+        </Spinner>
+        <Label layoutX="534.0" layoutY="371.0" text="Rank">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </Label>
+        <Button fx:id="continueButton" layoutX="931.0" layoutY="639.0" mnemonicParsing="false"
+                onAction="#onContinueButton" text="Continue"/>
+        <Label fx:id="knackDescription" layoutX="534.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0"
+               text="Label" visible="false" wrapText="true"/>
+    </children>
 </AnchorPane>
