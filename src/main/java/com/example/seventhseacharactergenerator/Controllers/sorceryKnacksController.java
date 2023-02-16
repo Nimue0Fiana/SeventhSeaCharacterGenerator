@@ -58,7 +58,10 @@ public class sorceryKnacksController implements Initializable {
     @FXML // fx:id="updateButton"
     private Button updateButton; // Value injected by FXMLLoader
 
-
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         sorceryPointsTotal.setText((String.valueOf(initSorceryPoints1)));
@@ -77,6 +80,9 @@ public class sorceryKnacksController implements Initializable {
         });
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinueButton(ActionEvent event) {
         if (tempSorcerer.getSorceryPoints1() < 0) {
@@ -98,6 +104,9 @@ public class sorceryKnacksController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onUpdateButton(ActionEvent event) {
         int prevKnackLevel = knackTable.getSelectionModel().getSelectedItem().getKnackLevel();

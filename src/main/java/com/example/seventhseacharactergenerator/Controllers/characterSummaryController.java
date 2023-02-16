@@ -164,6 +164,10 @@ public class characterSummaryController implements Initializable {
     @FXML //fx:id="saveButton"
     private Button saveButton; //Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //System.out.println("TempChar: " + tempCharacter);
@@ -379,6 +383,9 @@ public class characterSummaryController implements Initializable {
 
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onSaveButton(ActionEvent actionEvent) {
         int characterId;
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please confirm you are done viewing character data.");
@@ -400,22 +407,22 @@ public class characterSummaryController implements Initializable {
                         DBChar_Advantages.addCharAdvantages(characterId, advId);
                     }
                 }
-                if(skills.size() > 0) {
-                    for (Skill s: skills
-                         ) {
+                if (skills.size() > 0) {
+                    for (Skill s : skills
+                    ) {
                         int skillId = s.getId();
                         DBChar_Skills.addCharSkills(characterId, skillId);
                     }
                 }
-                if(knacks.size() > 0) {
-                    for (Knack k: knacks
-                         ) {
+                if (knacks.size() > 0) {
+                    for (Knack k : knacks
+                    ) {
                         int knackId = k.getId();
                         int rank = k.getKnackLevel();
                         DBChar_Knacks.addCharKnacks(characterId, knackId, rank);
                     }
                 }
-                if(tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
+                if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
                     for (SwordsmanSchool ss : tempSwordsman.getSwordsmanSchools()
                     ) {
                         DBChar_Sword_School.addCharSwordSchool(characterId, ss.getId());
@@ -429,31 +436,31 @@ public class characterSummaryController implements Initializable {
                         DBChar_Sword_Knacks.addCharSwordsmanKnacks(characterId, sk.getId(), sk.getKnackLevel());
                     }
                     //character has more than one sorcery bloodline
-                    if(tempSwordSorcerer.getBlood() == 3) {
-                        for (Sorcery s: tempSorcerer.getSorceries()
+                    if (tempSwordSorcerer.getBlood() == 3) {
+                        for (Sorcery s : tempSorcerer.getSorceries()
                         ) {
                             DBChar_Sorcery.addCharSorcery(characterId, s.getId(), 3);
                         }
-                        for (SorceryDegree sd: tempSorcerer.getSorceryDegrees()
+                        for (SorceryDegree sd : tempSorcerer.getSorceryDegrees()
                         ) {
                             DBChar_Sorcery_Degree.addCharSorceryDegree(characterId, sd.getId());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks1()
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks1()
                         ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks2()
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks2()
                         ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
                     } else {
                         //character has only one sorcery bloodline
                         DBChar_Sorcery.addCharSorcery(characterId, tempSorcerer.getSorcery().getId(), tempSorcerer.getBlood());
-                        for (SorceryDegree sd: tempSorcerer.getSorceryDegrees()
+                        for (SorceryDegree sd : tempSorcerer.getSorceryDegrees()
                         ) {
                             DBChar_Sorcery_Degree.addCharSorceryDegree(characterId, sd.getId());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks1()
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks1()
                         ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
@@ -461,47 +468,47 @@ public class characterSummaryController implements Initializable {
                 } else if (tempCharacter.isSorcerer()) {
                     //if character has more than one sorcery bloodline
                     if (tempSorcerer.getBlood() == 3) {
-                        for (Sorcery s: tempSorcerer.getSorceries()
-                             ) {
+                        for (Sorcery s : tempSorcerer.getSorceries()
+                        ) {
                             DBChar_Sorcery.addCharSorcery(characterId, s.getId(), 3);
                         }
-                        for (SorceryDegree sd: tempSorcerer.getSorceryDegrees()
-                             ) {
+                        for (SorceryDegree sd : tempSorcerer.getSorceryDegrees()
+                        ) {
                             DBChar_Sorcery_Degree.addCharSorceryDegree(characterId, sd.getId());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks1()
-                             ) {
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks1()
+                        ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks2()
-                             ) {
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks2()
+                        ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
                     } else {
                         //character has only one sorcery bloodline
                         DBChar_Sorcery.addCharSorcery(characterId, tempSorcerer.getSorcery().getId(), tempSorcerer.getBlood());
-                        for (SorceryDegree sd: tempSorcerer.getSorceryDegrees()
-                             ) {
+                        for (SorceryDegree sd : tempSorcerer.getSorceryDegrees()
+                        ) {
                             DBChar_Sorcery_Degree.addCharSorceryDegree(characterId, sd.getId());
                         }
-                        for (SorceryKnack sk: tempSorcerer.getSorceryKnacks1()
-                             ) {
+                        for (SorceryKnack sk : tempSorcerer.getSorceryKnacks1()
+                        ) {
                             DBChar_Sorcery_Knacks.addCharSorceryKnacks(characterId, sk.getId(), sk.getKnackLevel());
                         }
 
                     }
 
-                }else if (tempCharacter.isSwordsman()) {
+                } else if (tempCharacter.isSwordsman()) {
                     for (SwordsmanSchool ss : tempSwordsman.getSwordsmanSchools()
-                         ) {
+                    ) {
                         DBChar_Sword_School.addCharSwordSchool(characterId, ss.getId());
                     }
                     for (SwordsmanDegree sd : tempSwordsman.getSwordsmanDegrees()
-                         ) {
+                    ) {
                         DBChar_Sword_Degrees.addCharSwordDegree(characterId, sd.getId());
                     }
                     for (SwordsmanKnack sk : tempSwordsman.getSwordsmanKnacks()
-                         ) {
+                    ) {
                         DBChar_Sword_Knacks.addCharSwordsmanKnacks(characterId, sk.getId(), sk.getKnackLevel());
                     }
                 }

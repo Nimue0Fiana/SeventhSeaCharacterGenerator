@@ -62,6 +62,10 @@ public class knacksController implements Initializable {
     @FXML // fx:id="updateButton"
     private Button updateButton; // Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
@@ -96,6 +100,9 @@ public class knacksController implements Initializable {
         });
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onUpdateButton(ActionEvent event) {
         int prevKnackLevel = knackTable.getSelectionModel().getSelectedItem().getKnackLevel();
@@ -107,6 +114,9 @@ public class knacksController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinueButton(ActionEvent event) {
         if (initHeroPoints < 0) {

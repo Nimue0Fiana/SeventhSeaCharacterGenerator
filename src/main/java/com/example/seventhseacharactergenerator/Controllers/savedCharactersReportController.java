@@ -49,7 +49,10 @@ public class savedCharactersReportController implements Initializable {
     @FXML // fx:id="continueButton"
     private Button continueButton; // Value injected by FXMLLoader
 
-
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         allPlayerCharacters = DBPlayerCharacter.getAllCharacters();
@@ -62,6 +65,9 @@ public class savedCharactersReportController implements Initializable {
         timeCol.setCellValueFactory(new PropertyValueFactory<>("createDate"));
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onBackButton(ActionEvent event) {
         try {
@@ -76,6 +82,9 @@ public class savedCharactersReportController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onDeleteButton(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Please confirm you want to permanently delete this character.");
@@ -89,6 +98,9 @@ public class savedCharactersReportController implements Initializable {
         }
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onEditButton(ActionEvent event) {
         int charId = charTable.getSelectionModel().getSelectedItem().getId();

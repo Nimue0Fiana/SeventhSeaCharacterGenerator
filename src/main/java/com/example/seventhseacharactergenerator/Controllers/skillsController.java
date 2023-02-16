@@ -74,6 +74,10 @@ public class skillsController implements Initializable {
     @FXML // fx:id="skillsList"
     private Label skillsList; //Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (tempCharacter.isSorcerer() && tempCharacter.isSwordsman()) {
@@ -103,9 +107,12 @@ public class skillsController implements Initializable {
         chosenSkillCol.setCellValueFactory(new PropertyValueFactory<>("name"));
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onAddButton(ActionEvent actionEvent) {
         Skill selectedSkill = availableSkillsTable.getSelectionModel().getSelectedItem();
-        if(selectedSkill == null) {
+        if (selectedSkill == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a skill to add.");
             alert.showAndWait();
         } else {
@@ -136,9 +143,12 @@ public class skillsController implements Initializable {
 
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onRemoveButton(ActionEvent actionEvent) {
         Skill selectedSkill = chosenSkillsTable.getSelectionModel().getSelectedItem();
-        if(selectedSkill == null) {
+        if (selectedSkill == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please select a skill to remove.");
             alert.showAndWait();
         } else {
@@ -176,6 +186,9 @@ public class skillsController implements Initializable {
         }
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinue(ActionEvent event) {
         if (initHeroPoints < 0) {
@@ -211,9 +224,12 @@ public class skillsController implements Initializable {
         }
     }
 
+    /**
+     * @param keyEvent
+     */
     public void onEnter(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-            if(searchField.getText().isBlank()) {
+            if (searchField.getText().isBlank()) {
 
             } else {
                 try {
@@ -245,8 +261,11 @@ public class skillsController implements Initializable {
         }
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onSearchButton(ActionEvent actionEvent) {
-        if(searchField.getText().isBlank()) {
+        if (searchField.getText().isBlank()) {
 
         } else {
             try {

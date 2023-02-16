@@ -76,28 +76,32 @@ public class personalInfoEditController implements Initializable {
     @FXML
     public Label errorMessage;
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         characterName.setText(charName);
         playerName.setText(playName);
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
 
-        if(brawn == 3) {
+        if (brawn == 3) {
             brawnRank3.setFill(Paint.valueOf("black"));
             brawnRank2.setFill(Paint.valueOf("black"));
-        } else if (brawn ==2) {
+        } else if (brawn == 2) {
             brawnRank2.setFill(Paint.valueOf("black"));
         }
-        if(finesse == 3) {
+        if (finesse == 3) {
             finesseRank3.setFill(Paint.valueOf("black"));
             finesseRank2.setFill(Paint.valueOf("black"));
-        } else if (finesse ==2) {
+        } else if (finesse == 2) {
             finesseRank2.setFill(Paint.valueOf("black"));
         }
-        if(wits == 3) {
+        if (wits == 3) {
             witsRank3.setFill(Paint.valueOf("black"));
             witsRank2.setFill(Paint.valueOf("black"));
-        } else if (wits ==2) {
+        } else if (wits == 2) {
             witsRank2.setFill(Paint.valueOf("black"));
         }
         if (resolve == 3) {
@@ -106,7 +110,7 @@ public class personalInfoEditController implements Initializable {
         } else if (resolve == 2) {
             resolveRank2.setFill(Paint.valueOf("black"));
         }
-        if(panache == 3) {
+        if (panache == 3) {
             panacheRank3.setFill(Paint.valueOf("black"));
             panacheRank2.setFill(Paint.valueOf("black"));
         } else if (panache == 2) {
@@ -114,6 +118,9 @@ public class personalInfoEditController implements Initializable {
         }
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onBrawnRank1(MouseEvent mouseEvent) {
         brawnRank3.setFill(Paint.valueOf("white"));
         brawnRank2.setFill(Paint.valueOf("white"));
@@ -130,9 +137,12 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onBrawnRank2(MouseEvent mouseEvent) {
         brawnRank2.setFill(Paint.valueOf("black"));
-        if(brawnRank3.getFill().equals(Paint.valueOf("black"))){
+        if (brawnRank3.getFill().equals(Paint.valueOf("black"))) {
             brawnRank3.setFill(Paint.valueOf("white"));
         }
         newBrawn = 2;
@@ -147,6 +157,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onBrawnRank3(MouseEvent mouseEvent) {
         brawnRank3.setFill(Paint.valueOf("black"));
         brawnRank2.setFill(Paint.valueOf("black"));
@@ -162,6 +175,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onFinesseRank1(MouseEvent mouseEvent) {
         finesseRank3.setFill(Paint.valueOf("white"));
         finesseRank2.setFill(Paint.valueOf("white"));
@@ -172,9 +188,12 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onFinesseRank2(MouseEvent mouseEvent) {
         finesseRank2.setFill(Paint.valueOf("black"));
-        if(finesseRank3.getFill().equals(Paint.valueOf("black"))){
+        if (finesseRank3.getFill().equals(Paint.valueOf("black"))) {
             finesseRank3.setFill(Paint.valueOf("white"));
         }
         newFinesse = 2;
@@ -184,6 +203,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onFinesseRank3(MouseEvent mouseEvent) {
         finesseRank3.setFill(Paint.valueOf("black"));
         finesseRank2.setFill(Paint.valueOf("black"));
@@ -194,6 +216,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onWitsRank1(MouseEvent mouseEvent) {
         witsRank3.setFill(Paint.valueOf("white"));
         witsRank2.setFill(Paint.valueOf("white"));
@@ -204,9 +229,12 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onWitsRank2(MouseEvent mouseEvent) {
         witsRank2.setFill(Paint.valueOf("black"));
-        if(witsRank3.getFill().equals(Paint.valueOf("black"))){
+        if (witsRank3.getFill().equals(Paint.valueOf("black"))) {
             witsRank3.setFill(Paint.valueOf("white"));
         }
         newWits = 2;
@@ -216,6 +244,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onWitsRank3(MouseEvent mouseEvent) {
         witsRank3.setFill(Paint.valueOf("black"));
         witsRank2.setFill(Paint.valueOf("black"));
@@ -226,6 +257,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onResolveRank1(MouseEvent mouseEvent) {
         resolveRank3.setFill(Paint.valueOf("white"));
         resolveRank2.setFill(Paint.valueOf("white"));
@@ -236,9 +270,12 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onResolveRank2(MouseEvent mouseEvent) {
         resolveRank2.setFill(Paint.valueOf("black"));
-        if(resolveRank3.getFill().equals(Paint.valueOf("black"))){
+        if (resolveRank3.getFill().equals(Paint.valueOf("black"))) {
             resolveRank3.setFill(Paint.valueOf("white"));
         }
         newResolve = 2;
@@ -248,6 +285,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onResolveRank3(MouseEvent mouseEvent) {
         resolveRank3.setFill(Paint.valueOf("black"));
         resolveRank2.setFill(Paint.valueOf("black"));
@@ -258,6 +298,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onPanacheRank1(MouseEvent mouseEvent) {
         panacheRank3.setFill(Paint.valueOf("white"));
         panacheRank2.setFill(Paint.valueOf("white"));
@@ -268,9 +311,12 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onPanacheRank2(MouseEvent mouseEvent) {
         panacheRank2.setFill(Paint.valueOf("black"));
-        if(panacheRank3.getFill().equals(Paint.valueOf("black"))){
+        if (panacheRank3.getFill().equals(Paint.valueOf("black"))) {
             panacheRank3.setFill(Paint.valueOf("white"));
         }
         newPanache = 2;
@@ -280,6 +326,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param mouseEvent
+     */
     public void onPanacheRank3(MouseEvent mouseEvent) {
         panacheRank3.setFill(Paint.valueOf("black"));
         panacheRank2.setFill(Paint.valueOf("black"));
@@ -290,6 +339,9 @@ public class personalInfoEditController implements Initializable {
         heroPointsTotal.setText(String.valueOf(initHeroPoints));
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onSave(ActionEvent actionEvent) {
         DBPlayerCharacter.updatePersonalInfo(characterName.getText(), playerName.getText(), initHeroPoints, brawn,
                 finesse, wits, resolve, panache, tempCharacter.getId());

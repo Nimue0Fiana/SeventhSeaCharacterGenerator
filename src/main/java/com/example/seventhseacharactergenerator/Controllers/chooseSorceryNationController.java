@@ -51,6 +51,10 @@ public class chooseSorceryNationController implements Initializable {
     @FXML // fx:id="vodacce"
     private Button vodacce; // Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         characterNation = tempSorcerer.getNation().getNation_name();
@@ -66,6 +70,9 @@ public class chooseSorceryNationController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onAvalon(ActionEvent event) {
         nation = DBNation.getNationByName("avalon");
@@ -73,6 +80,9 @@ public class chooseSorceryNationController implements Initializable {
         nation2Description.setVisible(true);
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onMontaigne(ActionEvent event) {
         nation = DBNation.getNationByName("montaigne");
@@ -80,6 +90,9 @@ public class chooseSorceryNationController implements Initializable {
         nation2Description.setVisible(true);
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onVodacce(ActionEvent event) {
         nation = DBNation.getNationByName("vodacce");
@@ -87,6 +100,9 @@ public class chooseSorceryNationController implements Initializable {
         nation2Description.setVisible(true);
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onClick(ActionEvent event) {
         if (nation == null) {

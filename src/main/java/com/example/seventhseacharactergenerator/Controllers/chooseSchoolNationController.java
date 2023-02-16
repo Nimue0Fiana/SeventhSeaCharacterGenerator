@@ -54,7 +54,10 @@ public class chooseSchoolNationController implements Initializable {
     @FXML // fx:id="schoolDescription"
     private Label schoolDescription; // Value injected by FXMLLoader
 
-
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         school1.setText(nationButtons.get(0).getName());
@@ -62,6 +65,9 @@ public class chooseSchoolNationController implements Initializable {
         school3.setText(nationButtons.get(2).getName());
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onSchool1(ActionEvent event) {
         school = nationButtons.get(0);
@@ -70,6 +76,9 @@ public class chooseSchoolNationController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onSchool2(ActionEvent event) {
         school = nationButtons.get(1);
@@ -77,16 +86,23 @@ public class chooseSchoolNationController implements Initializable {
         schoolDescription.setText("School: " + school.getName() + " - " + school.getDescription());
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onSchool3(ActionEvent event) {
         school = nationButtons.get(2);
         schoolDescription.setVisible(true);
         schoolDescription.setText("School: " + school.getName() + " - " + school.getDescription());
     }
+
+    /**
+     * @param event
+     */
 //Set Swordsman Knacks to basic levels
     @FXML
     void onContinue(ActionEvent event) {
-        if(tempCharacter.isSorcerer()) {
+        if (tempCharacter.isSorcerer()) {
             tempSwordSorcerer.addSwordsmanSchool(school);
             tempSwordSorcerer.addSwordsmanDegree(DBSwordsmanDegree.getSwordsmanDegreeBySchoolId(school.getId()));
             tempSwordSorcerer.setSwordsmanKnacks(DBSwordsmanKnack.getInitKnacksForSwordsman(school.getId()));

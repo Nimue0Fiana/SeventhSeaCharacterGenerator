@@ -58,6 +58,10 @@ public class confirmSwordController implements Initializable {
     @FXML // fx:id="swordSchoolDescription"
     private Label swordSchoolDescription; // Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (tempCharacter.isSorcerer()) {
@@ -71,6 +75,9 @@ public class confirmSwordController implements Initializable {
         }
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onMyNation(ActionEvent event) {
         isSwordsman = true;
@@ -82,6 +89,9 @@ public class confirmSwordController implements Initializable {
         nextPage = "/com/example/seventhseacharactergenerator/swordKnacksPage-view.fxml";
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onOther(ActionEvent event) {
         isSwordsman = true;
@@ -90,6 +100,9 @@ public class confirmSwordController implements Initializable {
         nextPage = "/com/example/seventhseacharactergenerator/chooseSwordsmanNation-view.fxml";
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onNoSwordSchool(ActionEvent event) {
         isSwordsman = false;
@@ -97,6 +110,9 @@ public class confirmSwordController implements Initializable {
         nextPage = "/com/example/seventhseacharactergenerator/increaseTraitsPage-view.fxml";
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinue(ActionEvent event) {
         tempCharacter.setSwordsman(isSwordsman);

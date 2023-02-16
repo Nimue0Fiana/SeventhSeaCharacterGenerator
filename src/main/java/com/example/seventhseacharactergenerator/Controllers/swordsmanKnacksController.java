@@ -62,6 +62,10 @@ public class swordsmanKnacksController implements Initializable {
     @FXML // fx:id="updateButton"
     private Button updateButton; // Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (tempCharacter.isSorcerer()) {
@@ -99,6 +103,9 @@ public class swordsmanKnacksController implements Initializable {
         }
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onUpdateButton(ActionEvent event) {
         SwordsmanKnack selectedKnack = knackTable.getSelectionModel().getSelectedItem();
@@ -128,6 +135,9 @@ public class swordsmanKnacksController implements Initializable {
         }
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinueButton(ActionEvent event) {
         System.out.println(tempSwordsman);

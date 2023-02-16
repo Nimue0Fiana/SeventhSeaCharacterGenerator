@@ -30,6 +30,7 @@ import static com.example.seventhseacharactergenerator.Controllers.confirmSorcer
 import static com.example.seventhseacharactergenerator.Controllers.confirmSwordController.tempSwordSorcerer;
 import static com.example.seventhseacharactergenerator.Controllers.confirmSwordController.tempSwordsman;
 import static com.example.seventhseacharactergenerator.Controllers.personalInfoController.tempCharacter;
+
 //TODO: Make search work
 public class chooseAdvantagesController implements Initializable {
 
@@ -59,6 +60,10 @@ public class chooseAdvantagesController implements Initializable {
     @FXML // fx:id="heroPointsTotal"
     private Label heroPointsTotal; // Value injected by FXMLLoader
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -95,10 +100,13 @@ public class chooseAdvantagesController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onAddSelected(ActionEvent event) {
         Advantages selectedAdvantage = availableAdvantages.getSelectionModel().getSelectedItem();
-        if(selectedAdvantage == null) {
+        if (selectedAdvantage == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please select an advantage to add.");
             alert.showAndWait();
         } else {
@@ -109,9 +117,12 @@ public class chooseAdvantagesController implements Initializable {
         }
     }
 
+    /**
+     * @param actionEvent
+     */
     public void onRemoveSelected(ActionEvent actionEvent) {
         Advantages selectedAdvantage = chosenAdvantages.getSelectionModel().getSelectedItem();
-        if(selectedAdvantage == null) {
+        if (selectedAdvantage == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please select an advantage to remove.");
             alert.showAndWait();
         } else {
@@ -122,7 +133,9 @@ public class chooseAdvantagesController implements Initializable {
         }
     }
 
-
+    /**
+     * @param event
+     */
     @FXML
     void onContinueButton(ActionEvent event) {
         if (initHeroPoints < 0) {

@@ -89,6 +89,10 @@ public class TwiceBloodedSorceryKnackController implements Initializable {
     @FXML
     private Label sorcery2PointsLabel;
 
+    /**
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initSorceryPoints1 = tempSorcerer.getSorceryPoints1();
@@ -129,6 +133,9 @@ public class TwiceBloodedSorceryKnackController implements Initializable {
 
     }
 
+    /**
+     * @param actionEvent
+     */
     @FXML
     public void onAddSelected(ActionEvent actionEvent) {
         int prevKnackLevel = availableSkillsTable.getSelectionModel().getSelectedItem().getKnackLevel();
@@ -139,7 +146,9 @@ public class TwiceBloodedSorceryKnackController implements Initializable {
         sorcery1PointsLabel.setText(String.valueOf(initSorceryPoints1));
     }
 
-
+    /**
+     * @param actionEvent
+     */
     public void onAddSelected2(ActionEvent actionEvent) {
         int prevKnackLevel = availableSkillsTable2.getSelectionModel().getSelectedItem().getKnackLevel();
         availableSkillsTable2.getSelectionModel().getSelectedItem().setKnackLevel(spinner2.getValue());
@@ -149,6 +158,9 @@ public class TwiceBloodedSorceryKnackController implements Initializable {
         sorcery2PointsLabel.setText(String.valueOf(initSorceryPoints2));
     }
 
+    /**
+     * @param event
+     */
     @FXML
     void onContinue(ActionEvent event) {
 
