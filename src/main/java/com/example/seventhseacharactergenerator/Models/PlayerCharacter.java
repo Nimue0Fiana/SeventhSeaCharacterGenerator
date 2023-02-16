@@ -42,7 +42,8 @@ public class PlayerCharacter {
         this.panache = panache;
     }
 
-    public PlayerCharacter(String name, String player, String gender, String nationName, int heroPoints, LocalDateTime createDate) {
+    public PlayerCharacter(int id, String name, String player, String gender, String nationName, int heroPoints, LocalDateTime createDate) {
+        this.id = id;
         this.name= name;
         this.player = player;
         this.gender = gender;

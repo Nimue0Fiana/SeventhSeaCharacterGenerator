@@ -6,18 +6,34 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.increaseTraitsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.seventhseacharactergenerator.Controllers.personalInfoEditController">
    <children>
-      <Circle fill="#ae8600" layoutX="453.0" layoutY="72.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="continueButton" layoutX="429.0" layoutY="281.0" mnemonicParsing="false" onAction="#onContinue" text="Continue" />
-      <Label fx:id="heroPointsRemaining" alignment="CENTER" contentDisplay="CENTER" layoutX="417.0" layoutY="48.0" prefHeight="49.0" prefWidth="74.0" text="50" textFill="WHITE">
+      <Circle fill="#ae8600" layoutX="633.0" layoutY="61.0" radius="41.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="heroPointsTotal" alignment="CENTER" layoutX="605.0" layoutY="37.0" prefHeight="49.0" prefWidth="56.0" text="60" textFill="WHITE">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
-      <HBox fx:id="traitsHBox" layoutX="131.0" layoutY="193.0" prefHeight="100.0" prefWidth="200.0">
+      <Button fx:id="saveButton" layoutX="633.0" layoutY="394.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+      <VBox layoutX="264.0" layoutY="91.0" prefHeight="129.0" prefWidth="149.0" spacing="10.0">
          <children>
-            <VBox prefHeight="99.0" prefWidth="65.0">
+            <Label text="Character Name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="characterName" />
+            <Label text="Played By">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="playerName" />
+         </children>
+      </VBox>
+      <HBox fx:id="traitsHBox" layoutX="261.0" layoutY="256.0" prefHeight="94.0" prefWidth="161.0">
+         <children>
+            <VBox prefHeight="96.0" prefWidth="65.0">
                <children>
                   <Label text="Brawn" />
                   <Label text="Finesse" />
@@ -157,11 +173,10 @@
             </VBox>
          </children>
       </HBox>
-      <Label layoutX="81.0" layoutY="31.0" text="Increase your traits">
+      <Label fx:id="errorMessage" layoutX="258.0" layoutY="356.0" text="Label" textFill="RED" visible="false" wrapText="true">
          <font>
-            <Font name="Bauhaus 93" size="24.0" />
+            <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="72.0" prefHeight="108.0" prefWidth="279.0" text="Click on the dots to change your Rank in each trait. All heroes begin with Rank 1 in all traits; It costs 8 Hero Points to increase a trait by one Rank. No one may increase a trait beyond Rank 3 at character creation. No one may start with a Rank of 0." wrapText="true" />
    </children>
 </AnchorPane>

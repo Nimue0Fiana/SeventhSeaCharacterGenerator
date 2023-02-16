@@ -31,7 +31,7 @@ public class DBSkill {
         }
         return skills;
     }
-
+//https://stackoverflow.com/questions/8247970/using-like-wildcard-in-prepared-statement
     public static ObservableList<Skill> lookupSkill(String q) {
         ObservableList<Skill> skills = FXCollections.observableArrayList();
         try {
